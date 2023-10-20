@@ -4,5 +4,5 @@ import com.fiap.food_techchallenge.domain.Categoria;
 
 public interface CategoriaAdapterPort {
 
-    Categoria recuperaCategoriaById(Long id);
+    Categoria listarCategoriaById(Long id);
 }

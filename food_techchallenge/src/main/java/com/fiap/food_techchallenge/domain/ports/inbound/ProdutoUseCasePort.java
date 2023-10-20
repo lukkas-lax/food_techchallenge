@@ -4,6 +4,8 @@ import com.fiap.food_techchallenge.domain.Produto;
 
 public interface ProdutoUseCasePort {
 
-    Produto execute(Long id);
-    Produto execute(Produto produto);
+    Produto executeListar(Long id);
+    Produto executeSalvar(Produto produto);
+    Produto executeAtualizar(Produto produto);
+    void executeDeletar(Long id);
 }

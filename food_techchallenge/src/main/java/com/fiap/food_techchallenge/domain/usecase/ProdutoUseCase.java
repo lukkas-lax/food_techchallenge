@@ -17,8 +17,26 @@ public class ProdutoUseCase implements ProdutoUseCasePort {
     }
 
     @Override
-    public Produto execute(Produto produto) {
-        produto.setCategoria(categoriaAdapterPort.recuperaCategoriaById(produto.getCategoria().getId()));
+    public Produto executeSalvar(Produto produto) {
+        produto.setCategoria(categoriaAdapterPort.listarCategoriaById(produto.getCategoria().getId()));
         return produtoAdapterPort.salvar(produto);
+    }
+
+    @Override
+    public Produto executeListar(Long id) {
+        Produto produto = produtoAdapterPort.listaProduto(id);
+        produto.setCategoria(categoriaAdapterPort.listarCategoriaById(produto.getCategoria().getId()));
+        return produto;
+    }
+
+    @Override
+    public Produto executeAtualizar(Produto produto) {
+        produto.setCategoria(categoriaAdapterPort.listarCategoriaById(produto.getCategoria().getId()));
+        return produtoAdapterPort.atualizaProduto(produto);
+    }
+
+    @Override
+    public void executeDeletar(Long id) {
+        produtoAdapterPort.deletaProduto(id);
     }
 }
