@@ -11,4 +11,9 @@ public class CategoriaUseCase implements CategoriaUseCasePort {
     public Categoria execute(Long id) {
         return categoriaAdapterPort.listarCategoriaById(id);
     }
+
+    @Override
+    public Categoria execute(String descricao) {
+        return categoriaAdapterPort.listarCategoriaByDescricao(descricao);
+    }
 }

@@ -2,10 +2,14 @@ package com.fiap.food_techchallenge.application.adapter.inbound.controller;
 
 import com.fiap.food_techchallenge.application.adapter.inbound.request.ProdutoRequest;
 import com.fiap.food_techchallenge.application.adapter.inbound.response.ProdutoResponse;
+import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEntity;
+import com.fiap.food_techchallenge.domain.Produto;
 import com.fiap.food_techchallenge.domain.ports.inbound.ProdutoUseCasePort;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/food_techchallenge/produtos")
@@ -36,5 +40,10 @@ public class ProdutoController {
     @GetMapping("/{produtoId}")
     public ResponseEntity<ProdutoResponse> recuperaProdutoPorId(@PathVariable Long produtoId){
         return ResponseEntity.ok(ProdutoResponse.fromDomain(produtoUseCasePort.executeListar(produtoId)));
+    }
+
+    @GetMapping("categoria/{descricaoCategoria}")
+    public ResponseEntity<List<ProdutoEntity>> recuperaProdutoPorCategoria(@PathVariable String descricaoCategoria){
+        return ResponseEntity.ok(produtoUseCasePort.executeListarCategoria(descricaoCategoria));
     }
 }

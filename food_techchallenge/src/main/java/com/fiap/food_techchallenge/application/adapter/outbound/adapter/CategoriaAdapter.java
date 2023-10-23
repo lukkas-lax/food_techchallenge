@@ -1,6 +1,7 @@
 package com.fiap.food_techchallenge.application.adapter.outbound.adapter;
 
 
+import com.fiap.food_techchallenge.application.adapter.outbound.entity.CategoriaEntity;
 import com.fiap.food_techchallenge.application.adapter.outbound.repository.CategoriaRepository;
 import com.fiap.food_techchallenge.domain.Categoria;
 import com.fiap.food_techchallenge.domain.ports.outbound.CategoriaAdapterPort;
@@ -21,6 +22,16 @@ public class CategoriaAdapter implements CategoriaAdapterPort {
         try {
             var categoriaEntity = categoriaRepository.findById(id);
             return Categoria.fromEntity(categoriaEntity.get());
+        } catch(Exception exception) {
+            throw new EntityNotFoundException();
+        }
+    }
+
+    @Override
+    public Categoria listarCategoriaByDescricao(String descricao) {
+        try {
+            var categoriaEntity = categoriaRepository.findByDescricao(descricao);
+            return Categoria.fromEntity((CategoriaEntity) categoriaEntity);
         } catch(Exception exception) {
             throw new EntityNotFoundException();
         }

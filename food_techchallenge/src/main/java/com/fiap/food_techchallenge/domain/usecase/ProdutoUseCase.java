@@ -1,10 +1,14 @@
 package com.fiap.food_techchallenge.domain.usecase;
 
 
+import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEntity;
+import com.fiap.food_techchallenge.domain.Categoria;
 import com.fiap.food_techchallenge.domain.Produto;
 import com.fiap.food_techchallenge.domain.ports.inbound.ProdutoUseCasePort;
 import com.fiap.food_techchallenge.domain.ports.outbound.CategoriaAdapterPort;
 import com.fiap.food_techchallenge.domain.ports.outbound.ProdutoAdapterPort;
+
+import java.util.List;
 
 public class ProdutoUseCase implements ProdutoUseCasePort {
 
@@ -27,6 +31,12 @@ public class ProdutoUseCase implements ProdutoUseCasePort {
         Produto produto = produtoAdapterPort.listaProduto(id);
         produto.setCategoria(categoriaAdapterPort.listarCategoriaById(produto.getCategoria().getId()));
         return produto;
+    }
+
+    @Override
+    public List<ProdutoEntity> executeListarCategoria(String descricaoCategoria) {
+        Categoria categoria = categoriaAdapterPort.listarCategoriaByDescricao(descricaoCategoria);
+        return produtoAdapterPort.listaProdutoCategoria(categoria.getId());
     }
 
     @Override

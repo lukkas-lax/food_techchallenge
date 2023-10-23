@@ -9,6 +9,8 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Component
 public class ProdutoAdapter implements ProdutoAdapterPort {
 
@@ -39,6 +41,15 @@ public class ProdutoAdapter implements ProdutoAdapterPort {
             throw new EntityNotFoundException();
         }
 
+    }
+
+    @Override
+    public List<ProdutoEntity> listaProdutoCategoria(Long id) {
+        try{
+            return produtoRepository.findAllByCategoriaId(id);
+        } catch (Exception e) {
+            throw new EntityNotFoundException();
+        }
     }
 
     @Override

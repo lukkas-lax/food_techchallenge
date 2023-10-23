@@ -4,4 +4,5 @@ import com.fiap.food_techchallenge.application.adapter.outbound.entity.Categoria
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CategoriaRepository extends JpaRepository<CategoriaEntity, Long> {
+    Object findByDescricao(String descricao);
 }

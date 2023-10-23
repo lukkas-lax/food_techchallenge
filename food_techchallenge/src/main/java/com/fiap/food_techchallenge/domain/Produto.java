@@ -6,6 +6,8 @@ import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEn
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 public class Produto {
@@ -23,6 +25,7 @@ public class Produto {
                 produtoEntity.getPreco(),
                 new Categoria(produtoEntity.getCategoriaId()));
     }
+
 
     public Produto(Long id, String nome, String descricao, Float preco, Categoria categoria) {
         this.id = id;
