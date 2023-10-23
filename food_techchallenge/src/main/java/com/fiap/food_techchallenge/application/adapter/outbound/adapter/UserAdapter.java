@@ -5,7 +5,6 @@ import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEn
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.UserEntity;
 import com.fiap.food_techchallenge.application.adapter.outbound.repository.ProdutoRepository;
 import com.fiap.food_techchallenge.application.adapter.outbound.repository.UserRepository;
-import com.fiap.food_techchallenge.domain.Produto;
 import com.fiap.food_techchallenge.domain.User;
 import com.fiap.food_techchallenge.domain.ports.outbound.ProdutoAdapterPort;
 import com.fiap.food_techchallenge.domain.ports.outbound.UserAdapterPort;

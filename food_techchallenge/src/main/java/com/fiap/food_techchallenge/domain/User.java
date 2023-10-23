@@ -28,7 +28,7 @@ public class User {
     }
 
     public static User fromEntity(UserEntity userEntity) {
-        return new User(UserEntity.getId(),
+        return new User(userEntity.getId(),
                 userEntity.getNome(),
                 userEntity.getCpf(),
                 userEntity.getEmail());
