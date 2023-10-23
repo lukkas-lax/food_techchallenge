@@ -6,7 +6,6 @@ import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEn
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
 
 @Getter
 @Setter

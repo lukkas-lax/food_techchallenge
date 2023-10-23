@@ -3,7 +3,6 @@ package com.fiap.food_techchallenge.application.adapter.inbound.controller;
 import com.fiap.food_techchallenge.application.adapter.inbound.request.ProdutoRequest;
 import com.fiap.food_techchallenge.application.adapter.inbound.response.ProdutoResponse;
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEntity;
-import com.fiap.food_techchallenge.domain.Produto;
 import com.fiap.food_techchallenge.domain.ports.inbound.ProdutoUseCasePort;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
