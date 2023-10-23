@@ -3,7 +3,7 @@ package com.fiap.food_techchallenge.application.adapter.outbound.adapter;
 
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEntity;
 import com.fiap.food_techchallenge.application.adapter.outbound.repository.ProdutoRepository;
-import com.fiap.food_techchallenge.domain.Produto;
+import com.fiap.food_techchallenge.domain.domains.Produto;
 import com.fiap.food_techchallenge.domain.ports.outbound.ProdutoAdapterPort;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Component;

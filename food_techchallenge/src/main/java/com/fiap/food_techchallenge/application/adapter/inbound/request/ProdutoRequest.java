@@ -1,7 +1,7 @@
 package com.fiap.food_techchallenge.application.adapter.inbound.request;
 
-import com.fiap.food_techchallenge.domain.Categoria;
-import com.fiap.food_techchallenge.domain.Produto;
+import com.fiap.food_techchallenge.domain.domains.Categoria;
+import com.fiap.food_techchallenge.domain.domains.Produto;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

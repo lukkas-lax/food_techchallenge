@@ -1,7 +1,7 @@
 package com.fiap.food_techchallenge.domain.ports.outbound;
 
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEntity;
-import com.fiap.food_techchallenge.domain.Produto;
+import com.fiap.food_techchallenge.domain.domains.Produto;
 
 import java.util.List;
 

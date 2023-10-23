@@ -2,8 +2,8 @@ package com.fiap.food_techchallenge.domain.usecase;
 
 
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEntity;
-import com.fiap.food_techchallenge.domain.Categoria;
-import com.fiap.food_techchallenge.domain.Produto;
+import com.fiap.food_techchallenge.domain.domains.Categoria;
+import com.fiap.food_techchallenge.domain.domains.Produto;
 import com.fiap.food_techchallenge.domain.ports.inbound.ProdutoUseCasePort;
 import com.fiap.food_techchallenge.domain.ports.outbound.CategoriaAdapterPort;
 import com.fiap.food_techchallenge.domain.ports.outbound.ProdutoAdapterPort;

@@ -1,4 +1,4 @@
-package com.fiap.food_techchallenge.domain;
+package com.fiap.food_techchallenge.domain.domains;
 
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.CategoriaEntity;
 import lombok.Getter;

@@ -1,6 +1,6 @@
 package com.fiap.food_techchallenge.application.adapter.inbound.response;
 
-import com.fiap.food_techchallenge.domain.Produto;
+import com.fiap.food_techchallenge.domain.domains.Produto;
 import lombok.Getter;
 import lombok.Setter;
 

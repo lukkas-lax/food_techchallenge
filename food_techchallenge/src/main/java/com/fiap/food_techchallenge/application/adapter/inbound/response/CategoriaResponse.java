@@ -1,6 +1,6 @@
 package com.fiap.food_techchallenge.application.adapter.inbound.response;
 
-import com.fiap.food_techchallenge.domain.Categoria;
+import com.fiap.food_techchallenge.domain.domains.Categoria;
 import lombok.Getter;
 import lombok.Setter;
 

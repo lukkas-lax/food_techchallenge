@@ -1,4 +1,4 @@
-package com.fiap.food_techchallenge.domain;
+package com.fiap.food_techchallenge.domain.domains;
 
 
 
