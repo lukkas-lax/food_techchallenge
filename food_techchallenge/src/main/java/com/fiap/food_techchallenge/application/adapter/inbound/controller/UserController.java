@@ -27,7 +27,7 @@ public class UserController {
         return ResponseEntity.ok(userResponse);
     }
 
-    @GetMapping("/{produtoId}")
+    @GetMapping("/{userId}")
     public ResponseEntity<UserResponse> getUsuarios(@PathVariable Long userId){
 //        User user = userRequest.toUserDomain();
 //        UserResponse userResponse = UserResponse.fromDomain(userUseCasePort.salvar(user));
