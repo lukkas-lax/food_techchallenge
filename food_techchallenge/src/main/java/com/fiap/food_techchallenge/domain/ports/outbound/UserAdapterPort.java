@@ -1,7 +1,7 @@
 package com.fiap.food_techchallenge.domain.ports.outbound;
 
 
-import com.fiap.food_techchallenge.domain.User;
+import com.fiap.food_techchallenge.domain.domains.User;
 
 public interface UserAdapterPort {
 

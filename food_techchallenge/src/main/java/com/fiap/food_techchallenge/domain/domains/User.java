@@ -1,9 +1,6 @@
- package com.fiap.food_techchallenge.domain;
+ package com.fiap.food_techchallenge.domain.domains;
 
-import com.fiap.food_techchallenge.application.adapter.outbound.entity.CategoriaEntity;
-import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEntity;
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.UserEntity;
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

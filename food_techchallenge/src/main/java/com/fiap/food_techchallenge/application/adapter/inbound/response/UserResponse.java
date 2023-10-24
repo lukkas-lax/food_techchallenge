@@ -1,8 +1,7 @@
  package com.fiap.food_techchallenge.application.adapter.inbound.response;
 
 
-import com.fiap.food_techchallenge.domain.User;
-import lombok.AllArgsConstructor;
+import com.fiap.food_techchallenge.domain.domains.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

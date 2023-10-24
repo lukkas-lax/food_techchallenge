@@ -1,12 +1,9 @@
 package com.fiap.food_techchallenge.application.adapter.inbound.controller;
 
 import com.fiap.food_techchallenge.application.adapter.inbound.request.UserRequest;
-import com.fiap.food_techchallenge.application.adapter.inbound.response.ProdutoResponse;
 import com.fiap.food_techchallenge.application.adapter.inbound.response.UserResponse;
-import com.fiap.food_techchallenge.domain.User;
+import com.fiap.food_techchallenge.domain.domains.User;
 import com.fiap.food_techchallenge.domain.ports.inbound.UserUseCasePort;
-import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,7 @@
 package com.fiap.food_techchallenge.domain.usecase;
 
 
-import com.fiap.food_techchallenge.domain.User;
+import com.fiap.food_techchallenge.domain.domains.User;
 import com.fiap.food_techchallenge.domain.ports.inbound.UserUseCasePort;
 import com.fiap.food_techchallenge.domain.ports.outbound.UserAdapterPort;
 import org.springframework.beans.factory.annotation.Autowired;
