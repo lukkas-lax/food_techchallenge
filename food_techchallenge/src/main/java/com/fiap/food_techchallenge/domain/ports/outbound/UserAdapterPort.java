@@ -6,7 +6,7 @@ import com.fiap.food_techchallenge.domain.User;
 public interface UserAdapterPort {
 
     User salvar(User user);
-    User listaUsuarios(Long id);
-    User listaUsuariosPorCpf(User id);
+    User listaUsuario(Long id);
+    User listaUsuariosPorCpf(String id);
     void deletaUser(Long id);
 }

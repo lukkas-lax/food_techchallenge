@@ -6,6 +6,6 @@ public interface UserUseCasePort {
 
     User salvar(User user);
     User listaUsuarios(Long id);
-    User listaUsuariosPorCpf(User id);
+    User listaUsuariosPorCpf(String id);
     void deletaUser(Long id);
 }
