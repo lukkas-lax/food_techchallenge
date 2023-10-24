@@ -6,10 +6,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.math.BigDecimal;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "produtos")
 public class ProdutoEntity {
 
@@ -29,44 +32,5 @@ public class ProdutoEntity {
     @Column(name = "categoria_id")
     private Long categoriaId;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Float getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Float preco) {
-        this.preco = preco;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public Long getCategoriaId() {
-        return categoriaId;
-    }
-
-    public void setCategoriaId(Long categoriaId) {
-        this.categoriaId = categoriaId;
-    }
 }
 
