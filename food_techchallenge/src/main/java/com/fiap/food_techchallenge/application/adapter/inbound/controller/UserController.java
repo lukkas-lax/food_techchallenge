@@ -28,12 +28,19 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity<UserResponse> getUsuarios(@PathVariable Long userId){
-//        User user = userRequest.toUserDomain();
-//        UserResponse userResponse = UserResponse.fromDomain(userUseCasePort.salvar(user));
-//        return ResponseEntity.ok(userResponse);
+    public ResponseEntity<UserResponse> getUsuario(@PathVariable Long userId){
         return ResponseEntity.ok(UserResponse.fromDomain(userUseCasePort.listaUsuarios(userId)));
     }
 
 
+    @GetMapping("cpf/{cpf}")
+    public ResponseEntity<UserResponse> getUsuarioPorCpf(@PathVariable String cpf){
+        return ResponseEntity.ok(UserResponse.fromDomain(userUseCasePort.listaUsuariosPorCpf(cpf)));
+    }
+
+    @DeleteMapping("/{userId}")
+    public ResponseEntity<String> deletaUsuario(@PathVariable Long userId){
+        userUseCasePort.deletaUser(userId);
+        return ResponseEntity.ok("Usuário " + userId +" deletado com sucesso.");
+    }
 }

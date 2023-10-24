@@ -2,11 +2,8 @@ package com.fiap.food_techchallenge.domain.usecase;
 
 
 import com.fiap.food_techchallenge.domain.User;
-import com.fiap.food_techchallenge.domain.ports.inbound.CategoriaUseCasePort;
 import com.fiap.food_techchallenge.domain.ports.inbound.UserUseCasePort;
-import com.fiap.food_techchallenge.domain.ports.outbound.CategoriaAdapterPort;
 import com.fiap.food_techchallenge.domain.ports.outbound.UserAdapterPort;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class UserUseCase implements UserUseCasePort {
@@ -23,18 +20,19 @@ public class UserUseCase implements UserUseCasePort {
 
     @Override
     public User listaUsuarios(Long id) {
-        User user = userAdapterPort.listaUsuarios(id);
+        User user = userAdapterPort.listaUsuario(id);
         return user;
     }
 
     @Override
-    public User listaUsuariosPorCpf(User id) {
-        return null;
+    public User listaUsuariosPorCpf(String cpf) {
+        User user = userAdapterPort.listaUsuariosPorCpf(cpf);
+        return user;
     }
 
     @Override
     public void deletaUser(Long id) {
-
+        userAdapterPort.deletaUser(id);
     }
 
 

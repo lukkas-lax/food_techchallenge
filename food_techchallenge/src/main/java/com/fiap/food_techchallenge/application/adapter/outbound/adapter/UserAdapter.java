@@ -33,7 +33,7 @@ public class UserAdapter implements UserAdapterPort {
     }
 
     @Override
-    public User listaUsuarios(Long id) {
+    public User listaUsuario(Long id) {
         try {
             var user = userRepository.findById(id);
             return User.fromEntity(user.get());
@@ -43,13 +43,22 @@ public class UserAdapter implements UserAdapterPort {
     }
 
     @Override
-    public User listaUsuariosPorCpf(User id) {
-        return null;
+    public User listaUsuariosPorCpf(String cpf) {
+        try {
+            var user = userRepository.findByCpf(cpf);
+            return User.fromEntity(user.get());
+        } catch (Exception e) {
+            throw new EntityNotFoundException();
+        }
     }
 
     @Override
     public void deletaUser(Long id) {
-
+        try {
+            userRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new EntityNotFoundException();
+        }
     }
 }
 
