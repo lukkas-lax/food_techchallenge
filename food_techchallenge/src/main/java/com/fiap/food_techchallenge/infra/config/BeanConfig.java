@@ -34,8 +34,8 @@ public class BeanConfig {
     }
 
     @Bean
-    public PedidoUseCasePort pedidoUseCasePort(PedidoAdapterPort pedidoAdapterPort, UserAdapterPort userAdapterPort){
-        return new PedidoUseCase(pedidoAdapterPort, userAdapterPort);
+    public PedidoUseCasePort pedidoUseCasePort(PedidoAdapterPort pedidoAdapterPort, UserAdapterPort userAdapterPort, ProdutoAdapterPort produtoAdapterPort){
+        return new PedidoUseCase(pedidoAdapterPort, userAdapterPort, produtoAdapterPort);
     }
 
 }

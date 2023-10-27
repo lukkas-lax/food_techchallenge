@@ -21,7 +21,7 @@ public class PedidoController {
 
     @PostMapping
     public ResponseEntity<PedidoResponse> criaPedido(@Valid @RequestBody PedidoRequest pedidoRequest){
-        return ResponseEntity.ok(PedidoResponse.fromDomain(pedidoUseCasePort.executeSalvar(pedidoRequest.toPedidoDomain())));
+        return ResponseEntity.ok(PedidoResponse.fromDomain(pedidoUseCasePort.executeSalvar(pedidoRequest.toPedidoDomain(), pedidoRequest.getProdutosIds())));
     }
 
 //    @GetMapping("/{produtoId}")

@@ -21,9 +21,8 @@ public class Pedido {
     private Float total;
     private String orderStatus;
 
-    public Pedido(User user, Float total) {
+    public Pedido(User user) {
         this.user = user;
-        this.total = total;
     }
 
     public static Pedido fromEntity(PedidoEntity pedidoEntity) {

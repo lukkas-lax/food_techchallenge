@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,14 +19,11 @@ public class PedidoRequest {
     @NotNull
     private Long userId;
 
-//    @NotEmpty
-//    private Date datapedido;
-
     @NotNull
-    private Float total;
+    private List<Long> produtosIds;
 
     public Pedido toPedidoDomain(){
-        return new Pedido(new User(userId), total);
+        return new Pedido(new User(userId));
     }
 
 
