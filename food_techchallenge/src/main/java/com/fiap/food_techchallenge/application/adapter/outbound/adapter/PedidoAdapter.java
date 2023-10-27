@@ -1,8 +1,12 @@
 package com.fiap.food_techchallenge.application.adapter.outbound.adapter;
 
+import com.fiap.food_techchallenge.application.adapter.outbound.entity.ItensPedidoEntity;
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.PedidoEntity;
+import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEntity;
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.UserEntity;
+import com.fiap.food_techchallenge.application.adapter.outbound.repository.ItensPedidoRepository;
 import com.fiap.food_techchallenge.application.adapter.outbound.repository.PedidoRepository;
+import com.fiap.food_techchallenge.application.adapter.outbound.repository.ProdutoRepository;
 import com.fiap.food_techchallenge.domain.domains.Pedido;
 import com.fiap.food_techchallenge.domain.enums.OrderStatus;
 import com.fiap.food_techchallenge.domain.ports.outbound.PedidoAdapterPort;
@@ -11,14 +15,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class PedidoAdapter implements PedidoAdapterPort {
 
     private final PedidoRepository pedidoRepository;
+    private final ProdutoRepository produtoRepository;
+    private final ItensPedidoRepository itensPedidoRepository;
 
-    public PedidoAdapter(PedidoRepository pedidoRepository) {
+    public PedidoAdapter(PedidoRepository pedidoRepository,
+                         ProdutoRepository produtoRepository, ItensPedidoRepository itensPedidoRepository) {
         this.pedidoRepository = pedidoRepository;
+        this.produtoRepository = produtoRepository;
+        this.itensPedidoRepository = itensPedidoRepository;
     }
 
     @Override
@@ -33,6 +43,15 @@ public class PedidoAdapter implements PedidoAdapterPort {
         pedido.setId(pedidoRetorno.getId());
         pedido.setDatapedido(pedidoRetorno.getDatapedido());
         pedido.setOrderStatus(pedidoRetorno.getOrderStatus());
+        for (Long produto : produtos) {
+            Optional<ProdutoEntity> produtoRetorno = produtoRepository.findById(produto);
+            if(produtoRetorno.isPresent()){
+                itensPedidoRepository.save(new ItensPedidoEntity(produtoRetorno.get(), pedidoRetorno));
+            }
+            else{
+                throw new RuntimeException();
+            }
+        }
         return pedido;
     }
 
