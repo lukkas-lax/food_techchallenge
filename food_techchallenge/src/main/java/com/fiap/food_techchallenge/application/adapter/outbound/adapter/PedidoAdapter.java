@@ -1,5 +1,6 @@
 package com.fiap.food_techchallenge.application.adapter.outbound.adapter;
 
+import com.fiap.food_techchallenge.application.adapter.outbound.dto.PedidoDTO;
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.ItensPedidoEntity;
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.PedidoEntity;
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.ProdutoEntity;
@@ -8,13 +9,16 @@ import com.fiap.food_techchallenge.application.adapter.outbound.repository.Itens
 import com.fiap.food_techchallenge.application.adapter.outbound.repository.PedidoRepository;
 import com.fiap.food_techchallenge.application.adapter.outbound.repository.ProdutoRepository;
 import com.fiap.food_techchallenge.domain.domains.Pedido;
+import com.fiap.food_techchallenge.domain.domains.Produto;
+import com.fiap.food_techchallenge.domain.domains.User;
 import com.fiap.food_techchallenge.domain.enums.OrderStatus;
 import com.fiap.food_techchallenge.domain.ports.outbound.PedidoAdapterPort;
-import jakarta.persistence.EntityNotFoundException;
+import jakarta.persistence.NoResultException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,29 +54,29 @@ public class PedidoAdapter implements PedidoAdapterPort {
                 itensPedidoRepository.save(new ItensPedidoEntity(produtoRetorno.get(), pedidoRetorno));
             }
             else{
-                throw new RuntimeException();
+                throw new NoResultException();
             }
         }
         return pedido;
     }
 
-//    @Override
-//    public Pedido listaPedido(Long id) {
-//        try{
-//            var pedido = pedidoRepository.findById(id);
-//            return Pedido.fromEntity(pedido.get());
-//        } catch (Exception e) {
-//            throw new EntityNotFoundException();
-//        }
-//
-//    }
-//
     @Override
-    public List<PedidoEntity> listaPedidoStatus(String status) {
+    public List<PedidoDTO> listaPedidoStatus(String status) {
         try{
-            return pedidoRepository.findAllByOrderStatus(status);
+            List<PedidoDTO> pedidosResult = new ArrayList<>();
+            var pedidos = pedidoRepository.findAllByOrderStatus(status);
+            for (PedidoEntity pedido : pedidos) {
+                List<Produto> produtosResult = new ArrayList<>();
+                List<ItensPedidoEntity> itensProduto = itensPedidoRepository.findAllByPedidoEntity(pedido);
+                for (ItensPedidoEntity item : itensProduto){
+                    produtosResult.add(Produto.fromEntity(item.getProdutoEntity()));
+                }
+                pedidosResult.add(new PedidoDTO(pedido.getId(), User.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
+                        pedido.getTotal(), pedido.getOrderStatus(), produtosResult));
+            }
+            return pedidosResult;
         } catch (Exception e) {
-            throw new EntityNotFoundException();
+            throw new NoResultException();
         }
     }
 }

@@ -2,6 +2,7 @@ package com.fiap.food_techchallenge.application.adapter.inbound.controller;
 
 import com.fiap.food_techchallenge.application.adapter.inbound.request.PedidoRequest;
 import com.fiap.food_techchallenge.application.adapter.inbound.response.PedidoResponse;
+import com.fiap.food_techchallenge.application.adapter.outbound.dto.PedidoDTO;
 import com.fiap.food_techchallenge.application.adapter.outbound.entity.PedidoEntity;
 import com.fiap.food_techchallenge.domain.ports.inbound.PedidoUseCasePort;
 import jakarta.validation.Valid;
@@ -31,7 +32,7 @@ public class PedidoController {
 //    }
 //
     @GetMapping("status/{status}")
-    public ResponseEntity<List<PedidoEntity>> recuperaPedidoporStatus(@PathVariable String status){
+    public ResponseEntity<List<PedidoDTO>> recuperaPedidoporStatus(@PathVariable String status){
         return ResponseEntity.ok(pedidoUseCasePort.executeListarStatus(status));
     }
 }
