@@ -79,4 +79,26 @@ public class PedidoAdapter implements PedidoAdapterPort {
             throw new NoResultException();
         }
     }
+
+    @Override
+    @Transactional
+    public Pedido atualizaStatus(Long pedidoId) {
+        PedidoEntity pedidoEntity = pedidoRepository.findById(pedidoId).get();
+        if(pedidoEntity.getOrderStatus().equals("RECEIVED")){
+            pedidoEntity.setOrderStatus(OrderStatus.IN_PREPARATION.name());
+            return Pedido.fromEntity(pedidoRepository.save(pedidoEntity));
+        }
+        if(pedidoEntity.getOrderStatus().equals("IN_PREPARATION")){
+            pedidoEntity.setOrderStatus(OrderStatus.READY.name());
+            return Pedido.fromEntity(pedidoRepository.save(pedidoEntity));
+        }
+        if(pedidoEntity.getOrderStatus().equals("READY")){
+            pedidoEntity.setOrderStatus(OrderStatus.COMPLETED.name());
+            return Pedido.fromEntity(pedidoRepository.save(pedidoEntity));
+        }
+
+        return Pedido.fromEntity(pedidoRepository.save(pedidoEntity));
+    }
+
+
 }
