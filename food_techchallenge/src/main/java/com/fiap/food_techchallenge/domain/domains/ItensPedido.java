@@ -11,25 +11,21 @@ public class ItensPedido {
     private Long id;
     private Produto produto;
     private Pedido pedido;
-    private Integer quantidade;
 
     public static ItensPedido fromEntity(ItensPedidoEntity itensPedidoEntity) {
         return new ItensPedido(itensPedidoEntity.getId(),
                 Produto.fromEntity(itensPedidoEntity.getProdutoEntity()),
-                Pedido.fromEntity(itensPedidoEntity.getPedidoEntity()),
-                itensPedidoEntity.getQuantidade());
+                Pedido.fromEntity(itensPedidoEntity.getPedidoEntity()));
     }
 
-    public ItensPedido(Long id, Produto produto, Pedido pedido, Integer quantidade) {
+    public ItensPedido(Long id, Produto produto, Pedido pedido) {
         this.id = id;
         this.produto = produto;
         this.pedido = pedido;
-        this.quantidade = quantidade;
     }
 
     public ItensPedido(Produto produto, Pedido pedido, Integer quantidade) {
         this.produto = produto;
         this.pedido = pedido;
-        this.quantidade = quantidade;
     }
 }

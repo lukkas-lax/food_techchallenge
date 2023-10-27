@@ -17,15 +17,12 @@ public class ItensPedidoEntity {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "increment")
     private Long id;
 
-    @OneToOne(orphanRemoval = true)
+    @ManyToOne
     @JoinColumn(name = "produto_id")
     private ProdutoEntity produtoEntity;
 
     @ManyToOne
     @JoinColumn(name = "pedido_id")
     private PedidoEntity pedidoEntity;
-
-    @Column(name = "quantidade")
-    private Integer quantidade;
 
 }
