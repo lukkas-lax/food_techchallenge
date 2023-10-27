@@ -10,6 +10,7 @@ import com.fiap.food_techchallenge.application.adapter.outbound.repository.Produ
 import com.fiap.food_techchallenge.domain.domains.Pedido;
 import com.fiap.food_techchallenge.domain.enums.OrderStatus;
 import com.fiap.food_techchallenge.domain.ports.outbound.PedidoAdapterPort;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -66,12 +67,12 @@ public class PedidoAdapter implements PedidoAdapterPort {
 //
 //    }
 //
-//    @Override
-//    public List<PedidoEntity> listaPedidoStatus(String status) {
-//        try{
-//            return pedidoRepository.findAllByStatus(status);
-//        } catch (Exception e) {
-//            throw new EntityNotFoundException();
-//        }
-//    }
+    @Override
+    public List<PedidoEntity> listaPedidoStatus(String status) {
+        try{
+            return pedidoRepository.findAllByOrderStatus(status);
+        } catch (Exception e) {
+            throw new EntityNotFoundException();
+        }
+    }
 }

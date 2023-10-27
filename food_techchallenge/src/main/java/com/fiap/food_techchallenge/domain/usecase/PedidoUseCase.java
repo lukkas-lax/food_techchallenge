@@ -1,5 +1,6 @@
 package com.fiap.food_techchallenge.domain.usecase;
 
+import com.fiap.food_techchallenge.application.adapter.outbound.entity.PedidoEntity;
 import com.fiap.food_techchallenge.domain.domains.Pedido;
 import com.fiap.food_techchallenge.domain.domains.Produto;
 import com.fiap.food_techchallenge.domain.ports.inbound.PedidoUseCasePort;
@@ -42,9 +43,9 @@ public class PedidoUseCase implements PedidoUseCasePort {
 //        return pedido;
 //    }
 //
-//    @Override
-//    public List<PedidoEntity> executeListarStatus(String status) {
-//        return pedidoAdapterPort.listaPedidoStatus(status);
-//    }
+    @Override
+    public List<PedidoEntity> executeListarStatus(String status) {
+        return pedidoAdapterPort.listaPedidoStatus(status);
+    }
 
 }

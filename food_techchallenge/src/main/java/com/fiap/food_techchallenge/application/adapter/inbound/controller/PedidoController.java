@@ -2,6 +2,7 @@ package com.fiap.food_techchallenge.application.adapter.inbound.controller;
 
 import com.fiap.food_techchallenge.application.adapter.inbound.request.PedidoRequest;
 import com.fiap.food_techchallenge.application.adapter.inbound.response.PedidoResponse;
+import com.fiap.food_techchallenge.application.adapter.outbound.entity.PedidoEntity;
 import com.fiap.food_techchallenge.domain.ports.inbound.PedidoUseCasePort;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -29,9 +30,9 @@ public class PedidoController {
 //        return ResponseEntity.ok(ProdutoResponse.fromDomain(produtoUseCasePort.executeListar(produtoId)));
 //    }
 //
-//    @GetMapping("categoria/{descricaoCategoria}")
-//    public ResponseEntity<List<ProdutoEntity>> recuperaProdutoPorCategoria(@PathVariable String descricaoCategoria){
-//        return ResponseEntity.ok(produtoUseCasePort.executeListarCategoria(descricaoCategoria));
-//    }
+    @GetMapping("status/{status}")
+    public ResponseEntity<List<PedidoEntity>> recuperaPedidoporStatus(@PathVariable String status){
+        return ResponseEntity.ok(pedidoUseCasePort.executeListarStatus(status));
+    }
 }
 
