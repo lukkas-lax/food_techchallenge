@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Component
 public class PedidoAdapter implements PedidoAdapterPort {
@@ -22,7 +23,7 @@ public class PedidoAdapter implements PedidoAdapterPort {
 
     @Override
     @Transactional
-    public Pedido salvar(Pedido pedido) {
+    public Pedido salvar(Pedido pedido, List<Long> produtos) {
         PedidoEntity pedidoEntity = new PedidoEntity();
         pedidoEntity.setUserEntity(new UserEntity(pedido.getUser().getId(), pedido.getUser().getNome(), pedido.getUser().getCpf(), pedido.getUser().getEmail()));
         pedidoEntity.setDatapedido(LocalDateTime.now());

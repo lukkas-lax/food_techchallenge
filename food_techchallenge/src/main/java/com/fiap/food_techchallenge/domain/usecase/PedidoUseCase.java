@@ -32,7 +32,7 @@ public class PedidoUseCase implements PedidoUseCasePort {
         }
         pedido.setTotal(totalPedido);
 
-        return pedidoAdapterPort.salvar(pedido);
+        return pedidoAdapterPort.salvar(pedido, produtos);
     }
 
 //    @Override
