@@ -27,5 +27,12 @@ public class UserEntity {
     @Column(name = "email")
     private String email;
 
-
+    public UserEntity() {
+    }
+    public UserEntity(Long id, String nome, String cpf, String email) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+    }
 }

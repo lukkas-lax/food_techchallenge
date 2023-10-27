@@ -7,6 +7,7 @@ import com.fiap.food_techchallenge.domain.enums.OrderStatus;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -16,9 +17,14 @@ public class Pedido {
 
     private Long id;
     private User user;
-    private Date datapedido;
+    private LocalDateTime datapedido;
     private Float total;
-    private OrderStatus orderStatus;
+    private String orderStatus;
+
+    public Pedido(User user, Float total) {
+        this.user = user;
+        this.total = total;
+    }
 
     public static Pedido fromEntity(PedidoEntity pedidoEntity) {
         return new Pedido(pedidoEntity.getId(),
@@ -28,8 +34,20 @@ public class Pedido {
                 pedidoEntity.getOrderStatus());
     }
 
+    public Pedido(Long id, User user, LocalDateTime datapedido, Float total) {
+        this.id = id;
+        this.user = user;
+        this.datapedido = datapedido;
+        this.total = total == null ? (float) 0.0 : total;
+    }
 
-    public Pedido(Long id, User user, Date datapedido, Float total, OrderStatus orderStatus) {
+    public Pedido(User user, LocalDateTime datapedido, Float total) {
+        this.user = user;
+        this.datapedido = datapedido;
+        this.total = total == null ? (float) 0.0 : total;
+    }
+
+    public Pedido(Long id, User user, LocalDateTime datapedido, Float total, String orderStatus) {
         this.id = id;
         this.user = user;
         this.datapedido = datapedido;
@@ -37,7 +55,7 @@ public class Pedido {
         this.orderStatus = orderStatus;
     }
 
-    public Pedido(User user, Date datapedido, Float total, OrderStatus orderStatus) {
+    public Pedido(User user, LocalDateTime datapedido, Float total, String orderStatus) {
         this.user = user;
         this.datapedido = datapedido;
         this.total = total == null ? (float) 0.0 : total;

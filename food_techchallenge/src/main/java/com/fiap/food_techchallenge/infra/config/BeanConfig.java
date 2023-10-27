@@ -1,12 +1,15 @@
 package com.fiap.food_techchallenge.infra.config;
 
 import com.fiap.food_techchallenge.domain.ports.inbound.CategoriaUseCasePort;
+import com.fiap.food_techchallenge.domain.ports.inbound.PedidoUseCasePort;
 import com.fiap.food_techchallenge.domain.ports.inbound.ProdutoUseCasePort;
 import com.fiap.food_techchallenge.domain.ports.inbound.UserUseCasePort;
 import com.fiap.food_techchallenge.domain.ports.outbound.CategoriaAdapterPort;
+import com.fiap.food_techchallenge.domain.ports.outbound.PedidoAdapterPort;
 import com.fiap.food_techchallenge.domain.ports.outbound.ProdutoAdapterPort;
 import com.fiap.food_techchallenge.domain.ports.outbound.UserAdapterPort;
 import com.fiap.food_techchallenge.domain.usecase.CategoriaUseCase;
+import com.fiap.food_techchallenge.domain.usecase.PedidoUseCase;
 import com.fiap.food_techchallenge.domain.usecase.ProdutoUseCase;
 import com.fiap.food_techchallenge.domain.usecase.UserUseCase;
 import org.springframework.context.annotation.Bean;
@@ -28,6 +31,11 @@ public class BeanConfig {
     @Bean
     public UserUseCasePort userUseCasePort(UserAdapterPort userAdapterPort){
         return new UserUseCase();
+    }
+
+    @Bean
+    public PedidoUseCasePort pedidoUseCasePort(PedidoAdapterPort pedidoAdapterPort, UserAdapterPort userAdapterPort){
+        return new PedidoUseCase(pedidoAdapterPort, userAdapterPort);
     }
 
 }

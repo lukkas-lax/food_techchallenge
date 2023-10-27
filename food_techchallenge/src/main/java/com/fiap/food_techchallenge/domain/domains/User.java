@@ -22,6 +22,13 @@ public class User {
 
 
     public User(String nome, String cpf, String email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+    }
+
+    public User(Long userId) {
+        this.id = userId;
     }
 
     public static User fromEntity(UserEntity userEntity) {

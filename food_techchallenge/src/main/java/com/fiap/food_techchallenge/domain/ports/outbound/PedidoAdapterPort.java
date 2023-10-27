@@ -1,0 +1,13 @@
+package com.fiap.food_techchallenge.domain.ports.outbound;
+
+import com.fiap.food_techchallenge.application.adapter.outbound.entity.PedidoEntity;
+import com.fiap.food_techchallenge.domain.domains.Pedido;
+
+import java.util.List;
+
+public interface PedidoAdapterPort {
+
+    Pedido salvar(Pedido pedido);
+//    Pedido listaPedido(Long id);
+//    List<PedidoEntity> listaPedidoStatus(String status);
+}

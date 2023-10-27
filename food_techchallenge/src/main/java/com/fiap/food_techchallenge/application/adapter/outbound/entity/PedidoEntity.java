@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -23,12 +24,11 @@ public class PedidoEntity {
     @Column(name = "total")
     private Float total;
 
-    @Temporal(TemporalType.DATE)
+//    @Temporal(TemporalType.DATE)
     @Column(name = "datapedido")
-    private Date datapedido;
+    private LocalDateTime datapedido;
 
-    @Enumerated
     @Column(name = "order_status")
-    private OrderStatus orderStatus;
+    private String orderStatus;
 
 }
