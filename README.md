@@ -36,6 +36,7 @@ O projeto é uma API backend de fast-food, a API conta com todos os métodos nec
 ```
 ## Busca Usuário (ID)
 **Endpoint:** */api/food_techchallenge/users/${id}*
+**Método:** *GET*
 <br />
 **Description:** Método responsável por buscar usuários pelo ID do banco de dados. 
 <br />
@@ -54,6 +55,7 @@ Path parameter
 }
 ```
 ## Busca Usuário (por CPF)
+**Método:** *GET*
 **Endpoint:** */api/food_techchallenge/users/cpf/${cpf}*
 <br />
 **Description:** Método responsável por buscar usuários pelo CPF. 
@@ -74,6 +76,7 @@ Path parameter
 ```
 ## Deleta Usuário (ID)
 **Endpoint:** */api/food_techchallenge/users/${id}*
+**Método:** *DELETE*
 <br />
 **Description:** Método responsável por deletar usuários pelo ID do banco de dados. 
 <br />
@@ -116,6 +119,7 @@ Usuário 6 deletado com sucesso.
 ```
 ## Altera Produto
 **Endpoint:** */api/food_techchallenge/produtos/${id}*
+**Método:** *PUT*
 <br />
 **Description:** Método responsável por alterar produtos. 
 <br />
@@ -144,6 +148,7 @@ Usuário 6 deletado com sucesso.
 ```
 ## Busca Produto (ID)
 **Endpoint:** */api/food_techchallenge/produtos/${id}*
+**Método:** *GET*
 <br />
 **Description:** Método responsável por buscar produtos pelo ID do banco de dados. 
 <br />
@@ -167,6 +172,7 @@ Path parameter
 ```
 ## Busca Produto (por categoria)
 **Endpoint:** */api/food_techchallenge/produtos/categoria/Lanche*
+**Método:** *GET*
 <br />
 **Description:** Método responsável por buscar produtos pela sua categ. 
 <br />
@@ -190,6 +196,7 @@ Path parameter
 ```
 ## Deleta Produto (ID)
 **Endpoint:** */api/food_techchallenge/produtos/${id}*
+**Método:** *DELETE*
 **Description:** Método responsável por deletar produto pelo ID do banco de dados. 
 <br />
 **Request Example:** 
@@ -203,6 +210,7 @@ Path parameter
 ```
 ## Salva Pedido
 **Endpoint:** */api/food_techchallenge/pedidos*
+**Método:** *POST*
 <br />
 **Description:** Método responsável por criar produtos. 
 <br />
@@ -231,12 +239,13 @@ Path parameter
 ```
 ## Lista Pedido
 **Endpoint:** */api/food_techchallenge/pedidos/status/RECEIVED*
+**Método:** *GET*
 <br />
 **Description:** Método responsável por listar produtos em status espécíficos.
--RECEIVED
--IN_PREPARATION
--READY
--COMPLETED
+- RECEIVED
+- IN_PREPARATION
+- READY
+- COMPLETED
 <br />
 **Request Example:** 
 <br />
@@ -294,6 +303,7 @@ Path parameter
 ```
 ## Altera status do pedido
 **Endpoint:** */api/food_techchallenge/pedidos/${id}*
+**Método:** *PUT*
 <br />
 **Description:** Método responsável por avançar o status de um pedido específico.
 -RECEIVED
