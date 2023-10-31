@@ -1,8 +1,13 @@
-# food_techchallenge
-Projeto para curso de pós graduação em Arquitetura de Software na FIAP - Turma 3SOAT
+# Sobre o projeto
+O projeto é uma API backend de fast-food, a API conta com todos os métodos necessários para fazer o gerenciamento de fastfood, a documentação conta com o DDD no Miro do projeto, instruções de uso e mapeamento de endpoints. O projeto conta com arquitetura Hexagonal, tecnologia Java, uitilziando Spring, Hibernate, Maven, JDBC entre outros frameworks, MySQL para banco de dados e Docker para conteinerização.
 
-O projeto consiste em criar o backend de uma API de fast food em arquitetura Hexagonal.
-
+# Passo a passo para inicializar aplicação
+1. Clone este repositório.
+2. Dentro do repósitorio food_techchallenge, importe o projeto na sua IDE de preferência.
+3. Rode os comandos abaixo:
+   
+- mvn clean install
+- docker compose up
 
 # Services
 ## Salva Usuário
@@ -30,7 +35,7 @@ O projeto consiste em criar o backend de uma API de fast food em arquitetura Hex
 }
 ```
 ## Busca Usuário (ID)
-**Endpoint:** */api/food_techchallenge/users/9*
+**Endpoint:** */api/food_techchallenge/users/${id}*
 <br />
 **Description:** Método responsável por buscar usuários pelo ID do banco de dados. 
 <br />
@@ -49,7 +54,7 @@ Path parameter
 }
 ```
 ## Busca Usuário (por CPF)
-**Endpoint:** */api/food_techchallenge/users/cpf/777.233.123-19*
+**Endpoint:** */api/food_techchallenge/users/cpf/${cpf}*
 <br />
 **Description:** Método responsável por buscar usuários pelo CPF. 
 <br />
@@ -68,7 +73,7 @@ Path parameter
 }
 ```
 ## Deleta Usuário (ID)
-**Endpoint:** */api/food_techchallenge/users/6*
+**Endpoint:** */api/food_techchallenge/users/${id}*
 <br />
 **Description:** Método responsável por deletar usuários pelo ID do banco de dados. 
 <br />
@@ -110,7 +115,7 @@ Usuário 6 deletado com sucesso.
 }
 ```
 ## Altera Produto
-**Endpoint:** */api/food_techchallenge/produtos/1*
+**Endpoint:** */api/food_techchallenge/produtos/${id}*
 <br />
 **Description:** Método responsável por alterar produtos. 
 <br />
@@ -138,7 +143,7 @@ Usuário 6 deletado com sucesso.
 }
 ```
 ## Busca Produto (ID)
-**Endpoint:** */api/food_techchallenge/produtos/1*
+**Endpoint:** */api/food_techchallenge/produtos/${id}*
 <br />
 **Description:** Método responsável por buscar produtos pelo ID do banco de dados. 
 <br />
@@ -184,7 +189,7 @@ Path parameter
 }
 ```
 ## Deleta Produto (ID)
-**Endpoint:** */api/food_techchallenge/produtos/1
+**Endpoint:** */api/food_techchallenge/produtos/${id}*
 **Description:** Método responsável por deletar produto pelo ID do banco de dados. 
 <br />
 **Request Example:** 
@@ -288,7 +293,7 @@ Path parameter
 ]
 ```
 ## Altera status do pedido
-**Endpoint:** */api/food_techchallenge/pedidos/1*
+**Endpoint:** */api/food_techchallenge/pedidos/${id}*
 <br />
 **Description:** Método responsável por avançar o status de um pedido específico.
 -RECEIVED
