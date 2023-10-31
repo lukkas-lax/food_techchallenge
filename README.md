@@ -306,10 +306,10 @@ Path parameter
 **Método:** *PUT*
 <br />
 **Description:** Método responsável por avançar o status de um pedido específico.
--RECEIVED
--IN_PREPARATION
--READY
--COMPLETED
+- RECEIVED
+- IN_PREPARATION
+- READY
+- COMPLETED
 <br />
 **Request Example:** 
 <br />
