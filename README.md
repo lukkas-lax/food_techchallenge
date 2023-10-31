@@ -80,3 +80,209 @@ Path parameter
 ```
 Usuário 6 deletado com sucesso.
 ```
+## Salva Produto
+**Endpoint:** */api/food_techchallenge/produtos*
+<br />
+**Description:** Método responsável por salvar produtos. 
+<br />
+**Request Example:** 
+<br />
+```json
+{
+    "nome": "X-Salada",
+    "descricao": "Hamburguer com alface e tomate",
+    "preco": 14.50,
+    "categoriaId": 1
+}
+```
+**Response Example:** 
+```json
+{
+    "id": 1,
+    "nome": "X-Salada",
+    "descricao": "Hamburguer com alface e tomate",
+    "preco": 14.5,
+    "categoria": {
+        "id": 1,
+        "descricao": "Lanche"
+    }
+}
+```
+## Altera Produto
+**Endpoint:** */api/food_techchallenge/produtos/1*
+<br />
+**Description:** Método responsável por alterar produtos. 
+<br />
+**Request Example:** 
+<br />
+```json
+{
+    "nome": "Lanche Final Editado",
+    "descricao": "Teste de edição final",
+    "preco": 14.50,
+    "categoriaId": 1
+}
+```
+**Response Example:** 
+```json
+{
+    "id": 1,
+    "nome": "Lanche Final Editado",
+    "descricao": "Teste de edição final",
+    "preco": 14.5,
+    "categoria": {
+        "id": 1,
+        "descricao": "Lanche"
+    }
+}
+```
+## Busca Produto (ID)
+**Endpoint:** */api/food_techchallenge/produtos/1*
+<br />
+**Description:** Método responsável por buscar produtos pelo ID do banco de dados. 
+<br />
+**Request Example:** 
+<br />
+```
+Path parameter
+```
+**Response Example:** 
+```json
+{
+    "id": 1,
+    "nome": "Lanche Final Editado",
+    "descricao": "Teste de edição final",
+    "preco": 14.5,
+    "categoria": {
+        "id": 1,
+        "descricao": "Lanche"
+    }
+}
+```
+## Busca Produto (por categoria)
+**Endpoint:** */api/food_techchallenge/produtos/categoria/Lanche*
+<br />
+**Description:** Método responsável por buscar produtos pela sua categ. 
+<br />
+**Request Example:** 
+<br />
+```
+Path parameter
+```
+**Response Example:** 
+```json
+{
+    "id": 1,
+    "nome": "Lanche Final Editado",
+    "descricao": "Teste de edição final",
+    "preco": 14.5,
+    "categoria": {
+        "id": 1,
+        "descricao": "Lanche"
+    }
+}
+```
+## Deleta Produto (ID)
+**Endpoint:** */api/food_techchallenge/produtos/1
+**Description:** Método responsável por deletar produto pelo ID do banco de dados. 
+<br />
+**Request Example:** 
+<br />
+```
+Path parameter
+```
+**Response Example:** 
+```
+200 ok
+```
+## Salva Pedido
+**Endpoint:** */api/food_techchallenge/pedidos*
+<br />
+**Description:** Método responsável por criar produtos. 
+<br />
+**Request Example:** 
+<br />
+```json
+{
+    "userId": 12,
+    "produtosIds": [3,3,3]
+}
+```
+**Response Example:** 
+```json
+{
+    "id": 1,
+    "user": {
+        "id": 12,
+        "nome": "Gabriel Freitas",
+        "cpf": "777.233.123-19",
+        "email": "gf@gmail.com"
+    },
+    "datapedido": "2023-10-30T23:24:25.7370168",
+    "total": 43.5,
+    "orderStatus": "RECEIVED"
+}
+```
+## Lista Pedido
+**Endpoint:** */api/food_techchallenge/pedidos/status/RECEIVED*
+<br />
+**Description:** Método responsável por listar produtos em status espécíficos.
+-RECEIVED
+-IN_PREPARATION
+-READY
+-COMPLETED
+<br />
+**Request Example:** 
+<br />
+```
+Path parameter
+```
+**Response Example:** 
+```json
+[
+    {
+        "id": 1,
+        "user": {
+            "id": 12,
+            "nome": "Gabriel Freitas",
+            "cpf": "777.233.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2023-10-30T23:24:25.737017",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtos": [
+            {
+                "id": 3,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoria": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 3,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoria": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 3,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoria": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ]
+    }
+]
+```
