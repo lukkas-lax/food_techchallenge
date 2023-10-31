@@ -237,4 +237,66 @@ Path parameter
     "orderStatus": "RECEIVED"
 }
 ```
+## Lista Pedido (Por Status)
+**Endpoint:** */api/food_techchallenge/pedidos/status/RECEIVED*
+**Método:** *GET*
+<br />
+**Description:** Método responsável por listar produtos em determinados status, sendo eles: RECEIVED; IN_PREPARATION; READY; COMPLETED. 
+<br />
+**Request Example:** 
+<br />
+```
+{
+Path parameter
+}
+```
+**Response Example:** 
+```json
+[
+    {
+        "id": 2,
+        "user": {
+            "id": 12,
+            "nome": "Gabriel Freitas",
+            "cpf": "777.233.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2023-10-31T20:37:28.923042",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtos": [
+            {
+                "id": 3,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoria": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 3,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoria": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 3,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoria": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ]
+    }
+]
+```
 
