@@ -302,14 +302,11 @@ Path parameter
 ]
 ```
 ## Altera status do pedido
-**Endpoint:** */api/food_techchallenge/pedidos/${id}*
+**Endpoint:** */api/food_techchallenge/pedidos/1*
 **Método:** *PUT*
 <br />
-**Description:** Método responsável por avançar o status de um pedido específico.
-- RECEIVED
-- IN_PREPARATION
-- READY
-- COMPLETED
+**Description:** Método responsável por avançar status de pedidos espécíficos.
+
 <br />
 **Request Example:** 
 <br />
@@ -318,7 +315,16 @@ Path parameter
 ```
 **Response Example:** 
 ```json
-{
+[
+    {
+        "id": 1,
+        "user": {
+            "id": 12,
+            "nome": "Gabriel Freitas",
+            "cpf": "777.233.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2023-{
     "id": 1,
     "user": {
         "id": 12,
