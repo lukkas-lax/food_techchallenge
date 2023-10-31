@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "40a0045b-ec86-468f-915a-667a957ffb51",
+		"name": "Tech Challenge Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29078086"
+	},
+	"item": [
+		{
+			"name": "Salva Produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Salada Burguer\",\r\n    \"descricao\": \"Hamburguer com alface e tomate\",\r\n    \"preco\": 14.50,\r\n    \"categoriaId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alteração Produto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Lanche Final Editado\",\r\n    \"descricao\": \"Teste de edição final\",\r\n    \"preco\": 14.50,\r\n    \"categoriaId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/produtos/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"produtos",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta Produto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/produtos/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"produtos",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Produto (por ID)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/produtos/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"produtos",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Produto (por Categoria)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/produtos/categoria/Lanche",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"produtos",
+						"categoria",
+						"Lanche"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salva Pedido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"produtosIds\": [1,1,1]\r\n}\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/pedidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"pedidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Pedido (por STATUS)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/pedidos/status/RECEIVED",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"pedidos",
+						"status",
+						"RECEIVED"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Altera Status Pedido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/pedidos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"pedidos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salva Usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"3213\",\r\n    \"cpf\": \"222\",\r\n    \"email\": \"sdd@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Usuário (por ID)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Usuário (por CPF)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Gui\",\r\n    \"cpf\": \"333.123.323-12\",\r\n    \"email\": \"sdd@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/users/cpf/333",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"users",
+						"cpf",
+						"333"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta Usuário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/food_techchallenge/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"food_techchallenge",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
