@@ -12,7 +12,7 @@ O projeto consiste em criar o backend de uma API de fast food em arquitetura Hex
 <br />
 **Request Example:** 
 <br />
-```
+```json
 {
     "nome":"Gabriel Freitas",
     "cpf": "222.233.123-19",
@@ -46,4 +46,37 @@ Path parameter
     "cpf": "222.233.123-19",
     "email": "gf@gmail.com"
 }
+```
+## Busca Usuário (por CPF)
+**Endpoint:** */api/food_techchallenge/users/cpf/777.233.123-19*
+<br />
+**Description:** Método responsável por buscar usuários pelo CPF. 
+<br />
+**Request Example:** 
+<br />
+```
+Path parameter
+```
+**Response Example:** 
+```json
+{
+    "id": 11,
+    "nome": "Gabriel Freitas",
+    "cpf": "777.233.123-19",
+    "email": "gf@gmail.com"
+}
+```
+## Deleta Usuário (ID)
+**Endpoint:** */api/food_techchallenge/users/6*
+<br />
+**Description:** Método responsável por deletar usuários pelo ID do banco de dados. 
+<br />
+**Request Example:** 
+<br />
+```
+Path parameter
+```
+**Response Example:** 
+```
+Usuário 6 deletado com sucesso.
 ```
