@@ -1,7 +1,8 @@
-# Sobre o projeto
+# Food Tech Challenge - Fase 1
+## Sobre o projeto
 O projeto é uma API backend de fast-food, a API conta com todos os métodos necessários para fazer o gerenciamento de fastfood, a documentação conta com o DDD no Miro do projeto, instruções de uso e mapeamento de endpoints. O projeto conta com arquitetura Hexagonal, tecnologia Java, uitilziando Spring, Hibernate, Maven, JDBC entre outros frameworks, MySQL para banco de dados e Docker para conteinerização.
 
-# Passo a passo para inicializar aplicação
+## Passo a passo para inicializar aplicação
 1. Clone este repositório.
 2. Dentro do repósitorio food_techchallenge, importe o projeto na sua IDE de preferência.
 3. Rode os comandos abaixo:
@@ -9,8 +10,12 @@ O projeto é uma API backend de fast-food, a API conta com todos os métodos nec
 - mvn clean install
 - docker compose up
 
-# Disponibilizamos a collection do Postman
+## Collection do Postman
 [Collection](https://github.com/lukkas-lax/food_techchallenge/blob/master/Tech%20Challenge%20Final.postman_collection.json)
+
+## Script do banco de dados
+[Script](https://github.com/lukkas-lax/food_techchallenge/blob/master/food_techchallenge/database_creation.sql)
+
 
 # Services
 ## Salva Usuário
