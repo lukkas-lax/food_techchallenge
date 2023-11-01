@@ -9,6 +9,9 @@ O projeto é uma API backend de fast-food, a API conta com todos os métodos nec
 - mvn clean install
 - docker compose up
 
+# Disponibilizamos a collection do Postman
+[Collection](https://github.com/lukkas-lax/food_techchallenge/blob/master/Tech%20Challenge%20Final.postman_collection.json)
+
 # Services
 ## Salva Usuário
 **Endpoint:** */api/food_techchallenge/users*
