@@ -182,7 +182,7 @@ Path parameter
 **Endpoint:** */api/food_techchallenge/produtos/categoria/Lanche*
 **Método:** *GET*
 <br />
-**Description:** Método responsável por buscar produtos pela sua categoria. 
+**Description:** Método responsável por buscar produtos pela sua categoria, sendo elas: Lanche; Acompanhamento; Bebida; Sobremesa.
 <br />
 **Request Example:** 
 <br />
