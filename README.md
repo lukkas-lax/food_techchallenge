@@ -99,6 +99,7 @@ Usuário 6 deletado com sucesso.
 ```
 ## Salva Produto
 **Endpoint:** */api/food_techchallenge/produtos*
+**Método:** *POST*
 <br />
 **Description:** Método responsável por salvar produtos. 
 <br />
@@ -254,9 +255,7 @@ Path parameter
 **Request Example:** 
 <br />
 ```
-{
 Path parameter
-}
 ```
 **Response Example:** 
 ```json
