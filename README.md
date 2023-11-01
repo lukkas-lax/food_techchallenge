@@ -1,6 +1,6 @@
 # Food Tech Challenge - Fase 1
 ## Sobre o projeto
-O projeto é uma API backend de fast-food, a API conta com todos os métodos necessários para fazer o gerenciamento de fastfood, a documentação conta com o DDD no Miro do projeto, instruções de uso e mapeamento de endpoints. O projeto conta com arquitetura Hexagonal, tecnologia Java, uitilziando Spring, Hibernate, Maven, JDBC entre outros frameworks, MySQL para banco de dados e Docker para conteinerização.
+O projeto é uma API backend de fast-food, a API conta com todos os métodos necessários para fazer o gerenciamento de fastfood, a documentação conta com o DDD no Miro do projeto, instruções de uso e mapeamento de endpoints. O projeto conta com arquitetura Hexagonal, tecnologia Java, utilizando Spring, Hibernate, Maven, JDBC entre outros frameworks, MySQL para banco de dados e Docker para conteinerização.
 
 ## Passo a passo para inicializar aplicação
 1. Clone este repositório.
@@ -19,7 +19,7 @@ O projeto é uma API backend de fast-food, a API conta com todos os métodos nec
 
 # Services
 ## Salva Usuário
-**Endpoint:** */api/food_techchallenge/users*
+**Endpoint:** */api/food_techchallenge/users*<br />
 **Método:** *POST*
 <br />
 **Description:** Método responsável por salvar usuários. 
@@ -43,7 +43,7 @@ O projeto é uma API backend de fast-food, a API conta com todos os métodos nec
 }
 ```
 ## Busca Usuário (ID)
-**Endpoint:** */api/food_techchallenge/users/${id}*
+**Endpoint:** */api/food_techchallenge/users/${id}*<br />
 **Método:** *GET*
 <br />
 **Description:** Método responsável por buscar usuários pelo ID do banco de dados. 
@@ -63,8 +63,8 @@ Path parameter
 }
 ```
 ## Busca Usuário (por CPF)
+**Endpoint:** */api/food_techchallenge/users/cpf/${cpf}*<br />
 **Método:** *GET*
-**Endpoint:** */api/food_techchallenge/users/cpf/${cpf}*
 <br />
 **Description:** Método responsável por buscar usuários pelo CPF. 
 <br />
@@ -83,7 +83,7 @@ Path parameter
 }
 ```
 ## Deleta Usuário (ID)
-**Endpoint:** */api/food_techchallenge/users/${id}*
+**Endpoint:** */api/food_techchallenge/users/${id}*<br />
 **Método:** *DELETE*
 <br />
 **Description:** Método responsável por deletar usuários pelo ID do banco de dados. 
@@ -98,7 +98,7 @@ Path parameter
 Usuário 6 deletado com sucesso.
 ```
 ## Salva Produto
-**Endpoint:** */api/food_techchallenge/produtos*
+**Endpoint:** */api/food_techchallenge/produtos*<br />
 **Método:** *POST*
 <br />
 **Description:** Método responsável por salvar produtos. 
@@ -127,7 +127,7 @@ Usuário 6 deletado com sucesso.
 }
 ```
 ## Altera Produto
-**Endpoint:** */api/food_techchallenge/produtos/${id}*
+**Endpoint:** */api/food_techchallenge/produtos/${id}*<br />
 **Método:** *PUT*
 <br />
 **Description:** Método responsável por alterar produtos. 
@@ -156,7 +156,7 @@ Usuário 6 deletado com sucesso.
 }
 ```
 ## Busca Produto (ID)
-**Endpoint:** */api/food_techchallenge/produtos/${id}*
+**Endpoint:** */api/food_techchallenge/produtos/${id}*<br />
 **Método:** *GET*
 <br />
 **Description:** Método responsável por buscar produtos pelo ID do banco de dados. 
@@ -180,7 +180,7 @@ Path parameter
 }
 ```
 ## Busca Produto (por categoria)
-**Endpoint:** */api/food_techchallenge/produtos/categoria/Lanche*
+**Endpoint:** */api/food_techchallenge/produtos/categoria/Lanche*<br />
 **Método:** *GET*
 <br />
 **Description:** Método responsável por buscar produtos pela sua categoria, sendo elas: Lanche; Acompanhamento; Bebida; Sobremesa.
@@ -204,8 +204,8 @@ Path parameter
 }
 ```
 ## Deleta Produto (ID)
-**Endpoint:** */api/food_techchallenge/produtos/${id}*
-**Método:** *DELETE*
+**Endpoint:** */api/food_techchallenge/produtos/${id}*<br />
+**Método:** *DELETE* <br />
 **Description:** Método responsável por deletar produto pelo ID do banco de dados. 
 <br />
 **Request Example:** 
@@ -218,7 +218,7 @@ Path parameter
 200 ok
 ```
 ## Salva Pedido
-**Endpoint:** */api/food_techchallenge/pedidos*
+**Endpoint:** */api/food_techchallenge/pedidos*<br />
 **Método:** *POST*
 <br />
 **Description:** Método responsável por criar produtos. 
@@ -247,7 +247,7 @@ Path parameter
 }
 ```
 ## Lista Pedido (Por Status)
-**Endpoint:** */api/food_techchallenge/pedidos/status/RECEIVED*
+**Endpoint:** */api/food_techchallenge/pedidos/status/RECEIVED*<br />
 **Método:** *GET*
 <br />
 **Description:** Método responsável por listar produtos em determinados status, sendo eles: RECEIVED; IN_PREPARATION; READY; COMPLETED. 
@@ -307,8 +307,8 @@ Path parameter
 ]
 ```
 ## Altera Status Pedido (ID)
-**Endpoint:** */api/food_techchallenge/pedidos/${id}*
-**Método:** *PUT*
+**Endpoint:** */api/food_techchallenge/pedidos/${id}*<br />
+**Método:** *PUT*<br />
 **Description:** Método responsável por avançar o status do pedido desejado, sendo eles: RECEIVED; IN_PREPARATION; READY; COMPLETED. 
 <br />
 **Request Example:** 
