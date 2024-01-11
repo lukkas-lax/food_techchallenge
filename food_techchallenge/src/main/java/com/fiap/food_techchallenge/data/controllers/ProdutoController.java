@@ -1,6 +1,6 @@
 package com.fiap.food_techchallenge.data.controllers;
 
-import com.fiap.food_techchallenge.data.controllers.request.ProdutoRequest;
+import com.fiap.food_techchallenge.data.request.ProdutoRequest;
 import com.fiap.food_techchallenge.data.response.ProdutoResponse;
 import com.fiap.food_techchallenge.data.entities.ProdutoEntity;
 import com.fiap.food_techchallenge.domain.ports.ProdutoUseCasePort;

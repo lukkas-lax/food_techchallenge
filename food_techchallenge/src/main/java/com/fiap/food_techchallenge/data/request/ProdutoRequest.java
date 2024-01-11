@@ -1,4 +1,4 @@
-package com.fiap.food_techchallenge.data.controllers.request;
+package com.fiap.food_techchallenge.data.request;
 
 import com.fiap.food_techchallenge.domain.models.CategoriaModel;
 import com.fiap.food_techchallenge.domain.models.ProdutoModel;
