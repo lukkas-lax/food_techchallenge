@@ -3,9 +3,9 @@ package com.fiap.food_techchallenge.data.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.time.LocalDateTime;
-import java.util.UUID;
+
+
 
 @Entity
 @Getter
@@ -16,8 +16,8 @@ public class PedidoEntity {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "increment")
     private Long id;
 
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID uuid;
+    @Column(name = "uuid", updatable = false, nullable = false)
+    private String uuid;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)

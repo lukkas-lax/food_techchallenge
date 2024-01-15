@@ -44,6 +44,7 @@ public class PedidoAdapter implements PedidoRepository {
         pedidoEntity.setDatapedido(LocalDateTime.now());
         pedidoEntity.setTotal(pedidoModel.getTotal());
         pedidoEntity.setOrderStatus(OrderStatus.RECEIVED.name());
+        pedidoEntity.setUuid(pedidoModel.getUuid());
         var pedidoRetorno = pedidoRepository.save(pedidoEntity);
         pedidoModel.setId(pedidoRetorno.getId());
         pedidoModel.setDatapedido(pedidoRetorno.getDatapedido());

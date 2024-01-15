@@ -14,7 +14,7 @@ import java.util.UUID;
 public class PedidoModel {
 
     private Long id;
-    private UUID uuid;
+    private String uuid;
     private UserModel userModel;
     private LocalDateTime datapedido;
     private Float total;
@@ -33,7 +33,7 @@ public class PedidoModel {
                 pedidoEntity.getOrderStatus());
     }
 
-    public PedidoModel(Long id, UUID uuid, UserModel userModel, LocalDateTime datapedido, Float total) {
+    public PedidoModel(Long id, String uuid, UserModel userModel, LocalDateTime datapedido, Float total) {
         this.id = id;
         this.uuid = uuid;
         this.userModel = userModel;
@@ -47,7 +47,7 @@ public class PedidoModel {
         this.total = total == null ? (float) 0.0 : total;
     }
 
-    public PedidoModel(Long id, UUID uuid, UserModel userModel, LocalDateTime datapedido, Float total, String orderStatus) {
+    public PedidoModel(Long id, String uuid, UserModel userModel, LocalDateTime datapedido, Float total, String orderStatus) {
         this.id = id;
         this.uuid = uuid;
         this.userModel = userModel;

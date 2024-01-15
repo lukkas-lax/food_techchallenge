@@ -9,6 +9,7 @@ import com.fiap.food_techchallenge.domain.repositories.ProdutoRepository;
 import com.fiap.food_techchallenge.domain.repositories.UserRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 public class PedidoUseCase implements PedidoUseCasePort {
 
@@ -27,10 +28,13 @@ public class PedidoUseCase implements PedidoUseCasePort {
     public PedidoModel executeSalvar(PedidoModel pedidoModel, List<Long> produtos) {
         pedidoModel.setUserModel(userRepository.listaUsuario(pedidoModel.getUserModel().getId()));
         float totalPedido = 00.00F;
+        UUID uuid = UUID.randomUUID();
+        String uuidFinal = uuid.toString();
         for (Long produto : produtos) {
             ProdutoModel produtoModelRetorno = produtoRepository.listaProduto(produto);
             totalPedido = totalPedido+ produtoModelRetorno.getPreco();
         }
+        pedidoModel.setUuid(uuidFinal);
         pedidoModel.setTotal(totalPedido);
 
         return pedidoRepository.salvar(pedidoModel, produtos);
