@@ -39,5 +39,15 @@ public class PedidoController {
     public ResponseEntity<PedidoResponse> atualizaProduto(@PathVariable Long pedidoId){
         return ResponseEntity.ok(PedidoResponse.fromDomain(pedidoUseCasePort.executeAtualizar(pedidoId)));
     }
+
+    @GetMapping("/status")
+    public ResponseEntity<List<PedidoDTO>> listaPedidos(){
+        return ResponseEntity.ok(pedidoUseCasePort.listarPedidos());
+    }
+
+    @GetMapping("/payment-status/{pedidoId}")
+    public ResponseEntity<PedidoDTO> consultaStatusPagamnento(@PathVariable Long pedidoId){
+        return ResponseEntity.ok(pedidoUseCasePort.buscaStatusPagamento(pedidoId));
+    }
 }
 

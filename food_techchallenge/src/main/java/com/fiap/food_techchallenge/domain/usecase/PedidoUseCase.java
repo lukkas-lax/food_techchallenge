@@ -53,4 +53,14 @@ public class PedidoUseCase implements PedidoUseCasePort {
         return pedidoAdapterPort.atualizaStatus(pedidoId);
     }
 
+    @Override
+    public List<PedidoDTO> listarPedidos() {
+        return pedidoAdapterPort.listaPedidos();
+    }
+
+    @Override
+    public PedidoDTO buscaStatusPagamento(Long pedidoId) {
+        return pedidoAdapterPort.buscaStatusPagamento(pedidoId);
+    }
+
 }

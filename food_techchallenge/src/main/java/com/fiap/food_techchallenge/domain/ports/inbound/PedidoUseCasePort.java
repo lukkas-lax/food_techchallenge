@@ -13,4 +13,8 @@ public interface PedidoUseCasePort {
     Pedido executeSalvar(Pedido pedido, @NotNull List<Long> produtos);
 
     Pedido executeAtualizar(Long pedidoId);
+
+    List<PedidoDTO> listarPedidos();
+
+    PedidoDTO buscaStatusPagamento(Long pedidoId);
 }

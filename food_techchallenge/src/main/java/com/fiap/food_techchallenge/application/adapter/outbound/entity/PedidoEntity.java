@@ -31,4 +31,7 @@ public class PedidoEntity {
     @Column(name = "order_status")
     private String orderStatus;
 
+    @Column(name = "payment_status")
+    private String paymentStatus;
+
 }

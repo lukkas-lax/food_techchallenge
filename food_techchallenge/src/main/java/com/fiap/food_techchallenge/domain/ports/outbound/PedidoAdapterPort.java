@@ -15,4 +15,8 @@ public interface PedidoAdapterPort {
     @Transactional
     Pedido atualizaStatus(Long pedidoId);
 
+    List<PedidoDTO> listaPedidos();
+
+    PedidoDTO buscaStatusPagamento(Long pedidoId);
+
 }

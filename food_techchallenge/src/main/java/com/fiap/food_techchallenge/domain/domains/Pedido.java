@@ -21,6 +21,8 @@ public class Pedido {
     private Float total;
     private String orderStatus;
 
+    private String paymentStatus;
+
     public Pedido(User user) {
         this.user = user;
     }
@@ -30,7 +32,8 @@ public class Pedido {
                 User.fromEntity(pedidoEntity.getUserEntity()),
                 pedidoEntity.getDatapedido(),
                 pedidoEntity.getTotal(),
-                pedidoEntity.getOrderStatus());
+                pedidoEntity.getOrderStatus(),
+                pedidoEntity.getPaymentStatus());
     }
 
     public Pedido(Long id, User user, LocalDateTime datapedido, Float total) {
@@ -46,12 +49,13 @@ public class Pedido {
         this.total = total == null ? (float) 0.0 : total;
     }
 
-    public Pedido(Long id, User user, LocalDateTime datapedido, Float total, String orderStatus) {
+    public Pedido(Long id, User user, LocalDateTime datapedido, Float total, String orderStatus, String paymentStatus) {
         this.id = id;
         this.user = user;
         this.datapedido = datapedido;
         this.total = total == null ? (float) 0.0 : total;
         this.orderStatus = orderStatus;
+        this.paymentStatus = "APROVADO";
     }
 
     public Pedido(User user, LocalDateTime datapedido, Float total, String orderStatus) {

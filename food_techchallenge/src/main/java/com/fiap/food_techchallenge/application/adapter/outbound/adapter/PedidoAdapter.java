@@ -19,8 +19,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class PedidoAdapter implements PedidoAdapterPort {
@@ -44,6 +46,7 @@ public class PedidoAdapter implements PedidoAdapterPort {
         pedidoEntity.setDatapedido(LocalDateTime.now());
         pedidoEntity.setTotal(pedido.getTotal());
         pedidoEntity.setOrderStatus(OrderStatus.RECEIVED.name());
+        pedidoEntity.setPaymentStatus("APROVADO");
         var pedidoRetorno = pedidoRepository.save(pedidoEntity);
         pedido.setId(pedidoRetorno.getId());
         pedido.setDatapedido(pedidoRetorno.getDatapedido());
@@ -72,7 +75,7 @@ public class PedidoAdapter implements PedidoAdapterPort {
                     produtosResult.add(Produto.fromEntity(item.getProdutoEntity()));
                 }
                 pedidosResult.add(new PedidoDTO(pedido.getId(), User.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
-                        pedido.getTotal(), pedido.getOrderStatus(), produtosResult));
+                        pedido.getTotal(), pedido.getOrderStatus(), produtosResult, "APROVADO"));
             }
             return pedidosResult;
         } catch (Exception e) {
@@ -98,6 +101,67 @@ public class PedidoAdapter implements PedidoAdapterPort {
         }
 
         return Pedido.fromEntity(pedidoRepository.save(pedidoEntity));
+    }
+
+    @Override
+    public List<PedidoDTO> listaPedidos() {
+        var pedidosList = pedidoRepository.findAll();
+        var pedidosOrdenados = pedidosList.stream().sorted(Comparator.comparing(PedidoEntity::getOrderStatus, Comparator.comparingInt(status -> {
+            switch (status) {
+                case "READY":
+                    return 1;
+                case "IN_PREPARATION":
+                    return 2;
+                case "RECEIVED":
+                    return 3;
+                default:
+                    return 4;
+            }
+        })).thenComparing(PedidoEntity::getDatapedido, Comparator.reverseOrder())).toList();
+
+
+        List<PedidoDTO> listaPedidos = pedidosOrdenados.stream().map(pedidoEntity -> {
+            List<Produto> produtosResult = new ArrayList<>();
+            List<ItensPedidoEntity> itensProduto = itensPedidoRepository.findAllByPedidoEntity(pedidoEntity);
+            for (ItensPedidoEntity item : itensProduto){
+                produtosResult.add(Produto.fromEntity(item.getProdutoEntity()));
+            }
+
+            PedidoDTO dto = new PedidoDTO();
+            dto.setDatapedido(pedidoEntity.getDatapedido());
+            dto.setUser(User.fromEntity(pedidoEntity.getUserEntity()));
+            dto.setTotal(pedidoEntity.getTotal());
+            dto.setId(pedidoEntity.getId());
+            dto.setOrderStatus(pedidoEntity.getOrderStatus());
+            dto.setPaymentStatus(pedidoEntity.getPaymentStatus());
+            dto.setProdutos(produtosResult);
+            return dto;
+        }).toList();
+
+
+
+
+        return listaPedidos;
+    }
+
+    @Override
+    public PedidoDTO buscaStatusPagamento(Long pedidoId) {
+        var p = pedidoRepository.findById(pedidoId);
+        PedidoDTO p2 = new PedidoDTO();
+        p2.setPaymentStatus(p.get().getPaymentStatus());
+        p2.setUser(User.fromEntity(p.get().getUserEntity()));
+        p2.setTotal(p.get().getTotal());
+        p2.setId(p.get().getId());
+        p2.setDatapedido(p.get().getDatapedido());
+
+        List<ItensPedidoEntity> itensProduto = itensPedidoRepository.findAllByPedidoEntity(p.get());
+        List<Produto> produtosResult = new ArrayList<>();
+        for (ItensPedidoEntity item : itensProduto){
+            produtosResult.add(Produto.fromEntity(item.getProdutoEntity()));
+        }
+        p2.setProdutos(produtosResult);
+        p2.setOrderStatus(p.get().getOrderStatus());
+        return p2;
     }
 
 
