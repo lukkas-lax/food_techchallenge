@@ -34,6 +34,10 @@ public class PedidoController {
     public ResponseEntity<List<PedidoDTO>> recuperaPedidoporStatus(@PathVariable String status){
         return ResponseEntity.ok(pedidoUseCasePort.executeListarStatus(status));
     }
+    @GetMapping()
+    public ResponseEntity<List<PedidoDTO>> recuperaPedidos(){
+        return ResponseEntity.ok(pedidoUseCasePort.executeListarTodos());
+    }
 
     @PutMapping("/{pedidoId}")
     public ResponseEntity<PedidoResponse> atualizaProduto(@PathVariable Long pedidoId){

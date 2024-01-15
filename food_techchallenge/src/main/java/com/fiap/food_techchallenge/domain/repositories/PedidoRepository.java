@@ -11,7 +11,7 @@ public interface PedidoRepository {
     PedidoModel salvar(PedidoModel pedidoModel, List<Long> produtos);
 //    Pedido listaPedido(Long id);
     List<PedidoDTO> listaPedidoStatus(String status);
-
+    List<PedidoDTO> listaPedidos();
     @Transactional
     PedidoModel atualizaStatus(Long pedidoId);
 
