@@ -11,13 +11,13 @@ import java.util.UUID;
 @Setter
 public class PedidoResponse {
     private Long id;
-    private UUID uuid;
+    private String uuid;
     private UserResponse user;
     private LocalDateTime datapedido;
     private Float total;
     private String orderStatus;
 
-    public PedidoResponse(Long id, UUID uuid, UserResponse user, LocalDateTime datapedido, Float total, String orderStatus) {
+    public PedidoResponse(Long id, String uuid, UserResponse user, LocalDateTime datapedido, Float total, String orderStatus) {
         this.id = id;
         this.uuid = uuid;
         this.user = user;

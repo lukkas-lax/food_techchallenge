@@ -18,7 +18,7 @@ import java.util.UUID;
 public class PedidoDTO {
 
     private Long id;
-    private UUID uuid;
+    private String uuid;
     private UserModel userModel;
     private LocalDateTime datapedido;
     private Float total;
