@@ -53,6 +53,11 @@ public class PedidoUseCase implements PedidoUseCasePort {
     }
 
     @Override
+    public List<PedidoDTO> executeListarTodos() {
+        return pedidoRepository.listaPedidos();
+    }
+
+    @Override
     public PedidoModel executeAtualizar(Long pedidoId) {
         return pedidoRepository.atualizaStatus(pedidoId);
     }

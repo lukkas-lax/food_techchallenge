@@ -21,6 +21,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 
 @Component
 public class PedidoAdapter implements PedidoRepository {
@@ -74,6 +77,42 @@ public class PedidoAdapter implements PedidoRepository {
                 }
                 pedidosResult.add(new PedidoDTO(pedido.getId(), pedido.getUuid(), UserModel.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
                         pedido.getTotal(), pedido.getOrderStatus(), produtosResult));
+            }
+            return pedidosResult;
+        } catch (Exception e) {
+            throw new NoResultException();
+        }
+    }
+
+    @Override
+    public List<PedidoDTO> listaPedidos() {
+        try{
+            List<PedidoDTO> pedidosResult = new ArrayList<>();
+            List<PedidoDTO> pedidosReceived = new ArrayList<>();
+            List<PedidoDTO> pedidosPreparation = new ArrayList<>();
+            List<PedidoDTO> pedidosReady = new ArrayList<>();
+            var pedidos = pedidoRepository.findAllPedidosAtivos();
+            for (PedidoEntity pedido : pedidos) {
+                List<ProdutoModel> produtosResult = new ArrayList<>();
+                List<ItensPedidoEntity> itensProduto = itensPedidoJpaRepository.findAllByPedidoEntity(pedido);
+                for (ItensPedidoEntity item : itensProduto){
+                    produtosResult.add(ProdutoModel.fromEntity(item.getProdutoEntity()));
+                }
+                if(pedido.getOrderStatus().equals("RECEIVED")){
+                    pedidosReceived.add(new PedidoDTO(pedido.getId(), pedido.getUuid(), UserModel.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
+                            pedido.getTotal(), pedido.getOrderStatus(), produtosResult));
+                }
+                if(pedido.getOrderStatus().equals("IN_PREPARATION")){
+                    pedidosPreparation.add(new PedidoDTO(pedido.getId(), pedido.getUuid(), UserModel.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
+                            pedido.getTotal(), pedido.getOrderStatus(), produtosResult));
+                }
+                if(pedido.getOrderStatus().equals("READY")){
+                    pedidosReady.add(new PedidoDTO(pedido.getId(), pedido.getUuid(), UserModel.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
+                            pedido.getTotal(), pedido.getOrderStatus(), produtosResult));
+                }
+
+                pedidosResult = Stream.concat(pedidosReceived.stream(),pedidosPreparation.stream()).collect(Collectors.toList());
+                pedidosResult = Stream.concat(pedidosResult.stream(),pedidosReady.stream()).collect(Collectors.toList());
             }
             return pedidosResult;
         } catch (Exception e) {
