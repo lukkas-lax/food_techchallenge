@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 
 @Getter
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 public class PedidoModel {
 
     private Long id;
+    private UUID uuid;
     private UserModel userModel;
     private LocalDateTime datapedido;
     private Float total;
@@ -24,14 +26,16 @@ public class PedidoModel {
 
     public static PedidoModel fromEntity(PedidoEntity pedidoEntity) {
         return new PedidoModel(pedidoEntity.getId(),
+                pedidoEntity.getUuid(),
                 UserModel.fromEntity(pedidoEntity.getUserEntity()),
                 pedidoEntity.getDatapedido(),
                 pedidoEntity.getTotal(),
                 pedidoEntity.getOrderStatus());
     }
 
-    public PedidoModel(Long id, UserModel userModel, LocalDateTime datapedido, Float total) {
+    public PedidoModel(Long id, UUID uuid, UserModel userModel, LocalDateTime datapedido, Float total) {
         this.id = id;
+        this.uuid = uuid;
         this.userModel = userModel;
         this.datapedido = datapedido;
         this.total = total == null ? (float) 0.0 : total;
@@ -43,8 +47,9 @@ public class PedidoModel {
         this.total = total == null ? (float) 0.0 : total;
     }
 
-    public PedidoModel(Long id, UserModel userModel, LocalDateTime datapedido, Float total, String orderStatus) {
+    public PedidoModel(Long id, UUID uuid, UserModel userModel, LocalDateTime datapedido, Float total, String orderStatus) {
         this.id = id;
+        this.uuid = uuid;
         this.userModel = userModel;
         this.datapedido = datapedido;
         this.total = total == null ? (float) 0.0 : total;

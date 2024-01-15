@@ -71,7 +71,7 @@ public class PedidoAdapter implements PedidoRepository {
                 for (ItensPedidoEntity item : itensProduto){
                     produtosResult.add(ProdutoModel.fromEntity(item.getProdutoEntity()));
                 }
-                pedidosResult.add(new PedidoDTO(pedido.getId(), UserModel.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
+                pedidosResult.add(new PedidoDTO(pedido.getId(), pedido.getUuid(), UserModel.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
                         pedido.getTotal(), pedido.getOrderStatus(), produtosResult));
             }
             return pedidosResult;
