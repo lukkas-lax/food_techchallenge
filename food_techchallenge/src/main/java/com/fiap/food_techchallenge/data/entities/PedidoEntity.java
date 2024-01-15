@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -14,6 +15,9 @@ public class PedidoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "increment")
     private Long id;
+
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID uuid;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
@@ -28,5 +32,6 @@ public class PedidoEntity {
 
     @Column(name = "order_status")
     private String orderStatus;
+
 
 }

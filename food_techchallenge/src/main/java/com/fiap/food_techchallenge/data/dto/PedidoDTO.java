@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,6 +18,7 @@ import java.util.List;
 public class PedidoDTO {
 
     private Long id;
+    private UUID uuid;
     private UserModel userModel;
     private LocalDateTime datapedido;
     private Float total;
