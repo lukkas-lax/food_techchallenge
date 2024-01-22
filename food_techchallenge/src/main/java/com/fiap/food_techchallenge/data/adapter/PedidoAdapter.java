@@ -8,15 +8,21 @@ import com.fiap.food_techchallenge.data.entities.UserEntity;
 import com.fiap.food_techchallenge.data.repositories.ItensPedidoJpaRepository;
 import com.fiap.food_techchallenge.data.repositories.PedidoJpaRepository;
 import com.fiap.food_techchallenge.data.repositories.ProdutoJpaRepository;
+import com.fiap.food_techchallenge.domain.constants.ConstantUtils;
+import com.fiap.food_techchallenge.domain.enums.OrderStatus;
 import com.fiap.food_techchallenge.domain.models.PedidoModel;
 import com.fiap.food_techchallenge.domain.models.ProdutoModel;
 import com.fiap.food_techchallenge.domain.models.UserModel;
-import com.fiap.food_techchallenge.domain.enums.OrderStatus;
 import com.fiap.food_techchallenge.domain.repositories.PedidoRepository;
 import jakarta.persistence.NoResultException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.net.http.HttpClient;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,10 +54,29 @@ public class PedidoAdapter implements PedidoRepository {
         pedidoEntity.setTotal(pedidoModel.getTotal());
         pedidoEntity.setOrderStatus(OrderStatus.RECEIVED.name());
         pedidoEntity.setUuid(pedidoModel.getUuid());
+
+        boolean requestMercadoPago = true;
+//
+//        CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+////        String url = "https://api.mercadopago.com/instore/orders/qr/seller/collectors/" + ConstantUtils.USER_ID + "/pos/" + ConstantUtils.EXTERNAL_POS_ID + "/qrs";
+//        String url = "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=12331";
+//        try {
+//            HttpGet request = new HttpGet(url);
+//
+//        }catch (Exception e){
+//            System.out.print(e.toString());
+//        }
+
+
+        if (requestMercadoPago){
+            pedidoEntity.setPaymentStatus("APROVADO");
+        }
+
         var pedidoRetorno = pedidoRepository.save(pedidoEntity);
         pedidoModel.setId(pedidoRetorno.getId());
         pedidoModel.setDatapedido(pedidoRetorno.getDatapedido());
         pedidoModel.setOrderStatus(pedidoRetorno.getOrderStatus());
+        pedidoModel.setPaymentStatus(pedidoRetorno.getPaymentStatus());
         for (Long produto : produtos) {
             Optional<ProdutoEntity> produtoRetorno = produtoJpaRepository.findById(produto);
             if(produtoRetorno.isPresent()){
@@ -61,6 +86,7 @@ public class PedidoAdapter implements PedidoRepository {
                 throw new NoResultException();
             }
         }
+
         return pedidoModel;
     }
 
@@ -76,7 +102,7 @@ public class PedidoAdapter implements PedidoRepository {
                     produtosResult.add(ProdutoModel.fromEntity(item.getProdutoEntity()));
                 }
                 pedidosResult.add(new PedidoDTO(pedido.getId(), pedido.getUuid(), UserModel.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
-                        pedido.getTotal(), pedido.getOrderStatus(), produtosResult));
+                        pedido.getTotal(), pedido.getOrderStatus(), produtosResult, pedido.getPaymentStatus()));
             }
             return pedidosResult;
         } catch (Exception e) {
@@ -100,15 +126,15 @@ public class PedidoAdapter implements PedidoRepository {
                 }
                 if(pedido.getOrderStatus().equals("RECEIVED")){
                     pedidosReceived.add(new PedidoDTO(pedido.getId(), pedido.getUuid(), UserModel.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
-                            pedido.getTotal(), pedido.getOrderStatus(), produtosResult));
+                            pedido.getTotal(), pedido.getOrderStatus(), produtosResult, pedido.getPaymentStatus()));
                 }
                 if(pedido.getOrderStatus().equals("IN_PREPARATION")){
                     pedidosPreparation.add(new PedidoDTO(pedido.getId(), pedido.getUuid(), UserModel.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
-                            pedido.getTotal(), pedido.getOrderStatus(), produtosResult));
+                            pedido.getTotal(), pedido.getOrderStatus(), produtosResult, pedido.getPaymentStatus()));
                 }
                 if(pedido.getOrderStatus().equals("READY")){
                     pedidosReady.add(new PedidoDTO(pedido.getId(), pedido.getUuid(), UserModel.fromEntity(pedido.getUserEntity()), pedido.getDatapedido(),
-                            pedido.getTotal(), pedido.getOrderStatus(), produtosResult));
+                            pedido.getTotal(), pedido.getOrderStatus(), produtosResult, pedido.getPaymentStatus()));
                 }
 
                 pedidosResult = Stream.concat(pedidosReceived.stream(),pedidosPreparation.stream()).collect(Collectors.toList());
@@ -138,6 +164,27 @@ public class PedidoAdapter implements PedidoRepository {
         }
 
         return PedidoModel.fromEntity(pedidoRepository.save(pedidoEntity));
+    }
+
+    @Override
+    public PedidoDTO buscaStatusPagamento(Long pedidoId) {
+        var p = pedidoRepository.findById(pedidoId);
+        PedidoDTO p2 = new PedidoDTO();
+        p2.setPaymentStatus(p.get().getPaymentStatus());
+        p2.setUserModel(UserModel.fromEntity(p.get().getUserEntity()));
+        p2.setTotal(p.get().getTotal());
+        p2.setId(p.get().getId());
+        p2.setDatapedido(p.get().getDatapedido());
+        p2.setUuid(p.get().getUuid());
+
+        List<ItensPedidoEntity> itensProduto = itensPedidoJpaRepository.findAllByPedidoEntity(p.get());
+        List<ProdutoModel> produtosResult = new ArrayList<>();
+        for (ItensPedidoEntity item : itensProduto){
+            produtosResult.add(ProdutoModel.fromEntity(item.getProdutoEntity()));
+        }
+        p2.setProdutoModels(produtosResult);
+        p2.setOrderStatus(p.get().getOrderStatus());
+        return p2;
     }
 
 

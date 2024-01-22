@@ -24,4 +24,5 @@ public class PedidoDTO {
     private Float total;
     private String orderStatus;
     private List<ProdutoModel> produtoModels;
+    private String paymentStatus;
 }
