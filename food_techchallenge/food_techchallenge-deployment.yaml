@@ -12,53 +12,26 @@ spec:
         app: food-techchallenge
     spec:
       containers:
-        - name: food-techchallenge-container-db
+        - name: mysqldb
           image: 'mysql:8.0'
           ports:
             - containerPort: 3306
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 3306
-            periodSeconds: 10
-            failureThreshold: 3
-            initialDelaySeconds: 20
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 3306
-            periodSeconds: 10
-            failureThreshold: 5
-            initialDelaySeconds: 3
-          resources:
-            requests:
-              cpu: 1m
+          env:
+            - name: MYSQL_DATABASE
+              value: 'food_techchallenge'
+            - name: MYSQL_PASSWORD
+              value: '170593'
+            - name: MYSQL_ROOT_PASSWORD
+              value: '170593'
         - name: food-techchallenge-container-app
-          image: raulima1/app
+          image: raulima1/food_techchallenge
           ports:
             - containerPort: 8080
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8080
-            periodSeconds: 10
-            failureThreshold: 3
-            initialDelaySeconds: 20
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8080
-            periodSeconds: 10
-            failureThreshold: 5
-            initialDelaySeconds: 3
-          resources:
-            requests:
-              cpu: 1m
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://mysqldb:3306/food_techchallenge?createDatabaseIfNotExist=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&enabledTLSProtocols=TLSv1,TLSv1.1,TLSv1.2
+              value: 'jdbc:mysql://mysqldb:3306/food_techchallenge?createDatabaseIfNotExist=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&enabledTLSProtocols=TLSv1,TLSv1.1,TLSv1.2'
             - name: SPRING_DATASOURCE_USERNAME
-              value: root
+              value: 'root'
             - name: SPRING_DATASOURCE_PASSWORD
               value: '170593'
   replicas: 1
