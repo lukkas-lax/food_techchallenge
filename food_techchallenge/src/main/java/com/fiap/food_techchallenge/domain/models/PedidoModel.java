@@ -19,6 +19,7 @@ public class PedidoModel {
     private LocalDateTime datapedido;
     private Float total;
     private String orderStatus;
+    private String paymentStatus;
 
     public PedidoModel(UserModel userModel) {
         this.userModel = userModel;
@@ -30,7 +31,8 @@ public class PedidoModel {
                 UserModel.fromEntity(pedidoEntity.getUserEntity()),
                 pedidoEntity.getDatapedido(),
                 pedidoEntity.getTotal(),
-                pedidoEntity.getOrderStatus());
+                pedidoEntity.getOrderStatus(),
+                pedidoEntity.getPaymentStatus());
     }
 
     public PedidoModel(Long id, String uuid, UserModel userModel, LocalDateTime datapedido, Float total) {
@@ -47,13 +49,14 @@ public class PedidoModel {
         this.total = total == null ? (float) 0.0 : total;
     }
 
-    public PedidoModel(Long id, String uuid, UserModel userModel, LocalDateTime datapedido, Float total, String orderStatus) {
+    public PedidoModel(Long id, String uuid, UserModel userModel, LocalDateTime datapedido, Float total, String orderStatus, String paymentStatus) {
         this.id = id;
         this.uuid = uuid;
         this.userModel = userModel;
         this.datapedido = datapedido;
         this.total = total == null ? (float) 0.0 : total;
         this.orderStatus = orderStatus;
+        this.paymentStatus = paymentStatus;
     }
 
     public PedidoModel(UserModel userModel, LocalDateTime datapedido, Float total, String orderStatus) {

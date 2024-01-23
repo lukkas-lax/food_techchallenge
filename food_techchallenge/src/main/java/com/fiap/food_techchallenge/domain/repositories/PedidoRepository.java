@@ -15,4 +15,6 @@ public interface PedidoRepository {
     @Transactional
     PedidoModel atualizaStatus(Long pedidoId);
 
+    PedidoDTO buscaStatusPagamento (Long pedidoId);
+
 }
