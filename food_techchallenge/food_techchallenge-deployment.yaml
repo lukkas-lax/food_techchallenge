@@ -29,11 +29,14 @@ spec:
             - containerPort: 8080
           env:
             - name: SPRING_DATASOURCE_URL
-              value: 'jdbc:mysql://mysqldb:3306/food_techchallenge?createDatabaseIfNotExist=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&enabledTLSProtocols=TLSv1,TLSv1.1,TLSv1.2'
+              value: 'jdbc:mysql://food-techchallenge-svc:3306/food_techchallenge?createDatabaseIfNotExist=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&enabledTLSProtocols=TLSv1,TLSv1.1,TLSv1.2'
             - name: SPRING_DATASOURCE_USERNAME
               value: 'root'
             - name: SPRING_DATASOURCE_PASSWORD
               value: '170593'
+          resources:
+            requests:
+              cpu: 400m
   replicas: 1
   selector:
     matchLabels:
