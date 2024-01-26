@@ -331,3 +331,62 @@ Path parameter
     "orderStatus": "COMPLETED"
 }
 ```
+## Busca Status de Pagamento do Pedido (ID)
+**Endpoint:** */api/food_techchallenge/pedidos/payment-status/${id}*<br />
+**Método:** *GET*<br />
+**Description:** Método responsável por buscar um pedido e seu status de pagamento. 
+<br />
+**Request Example:** 
+<br />
+```
+Path parameter
+```
+**Response Example:** 
+```json
+{
+    "id": 13,
+    "uuid": "7c0df407-9ca1-41b2-8c54-d411cd6db4f6",
+    "userModel": {
+        "id": 6,
+        "nome": "3213",
+        "cpf": "656456",
+        "email": "sdd@gmail.com"
+    },
+    "datapedido": "2024-01-25T21:53:04.335955",
+    "total": 43.5,
+    "orderStatus": "RECEIVED",
+    "produtoModels": [
+        {
+            "id": 1,
+            "nome": "X-Salada",
+            "descricao": "Hamburguer com alface e tomate",
+            "preco": 14.5,
+            "categoriaModel": {
+                "id": 1,
+                "descricao": ""
+            }
+        },
+        {
+            "id": 1,
+            "nome": "X-Salada",
+            "descricao": "Hamburguer com alface e tomate",
+            "preco": 14.5,
+            "categoriaModel": {
+                "id": 1,
+                "descricao": ""
+            }
+        },
+        {
+            "id": 1,
+            "nome": "X-Salada",
+            "descricao": "Hamburguer com alface e tomate",
+            "preco": 14.5,
+            "categoriaModel": {
+                "id": 1,
+                "descricao": ""
+            }
+        }
+    ],
+    "paymentStatus": "APROVADO"
+}
+```
