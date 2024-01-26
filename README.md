@@ -390,3 +390,586 @@ Path parameter
     "paymentStatus": "APROVADO"
 }
 ```
+## Busca Status de Pagamento do Pedido (ID)
+**Endpoint:** */api/food_techchallenge/pedidos*<br />
+**Método:** *GET*<br />
+**Description:** Método responsável por buscar e ordenar pedidos.
+<br />
+**Request Example:** 
+<br />
+```
+Path parameter
+```
+**Response Example:** 
+```json
+[
+    {
+        "id": 4,
+        "uuid": "",
+        "userModel": {
+            "id": 4,
+            "nome": "Guil 424",
+            "cpf": "737.236.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2024-01-08T18:47:44.788546",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtoModels": [
+            {
+                "id": 2,
+                "nome": "X-teste",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 5,
+        "uuid": "",
+        "userModel": {
+            "id": 4,
+            "nome": "Guil 424",
+            "cpf": "737.236.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2024-01-08T18:47:51.147427",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtoModels": [
+            {
+                "id": 2,
+                "nome": "X-teste",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 6,
+        "uuid": "",
+        "userModel": {
+            "id": 4,
+            "nome": "Guil 424",
+            "cpf": "737.236.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2024-01-10T16:03:42.298385",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtoModels": [
+            {
+                "id": 2,
+                "nome": "X-teste",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 7,
+        "uuid": "e71bda40-5969-43ac-86c7-6d3ca68c96f3",
+        "userModel": {
+            "id": 5,
+            "nome": "Clebinho",
+            "cpf": "232321",
+            "email": "sdd@gmail.com"
+        },
+        "datapedido": "2024-01-20T19:15:09.526289",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 8,
+        "uuid": "37fd528e-9ffd-4872-9250-4291c7b5b2cb",
+        "userModel": {
+            "id": 5,
+            "nome": "Clebinho",
+            "cpf": "232321",
+            "email": "sdd@gmail.com"
+        },
+        "datapedido": "2024-01-20T19:16:32.871813",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 9,
+        "uuid": "a8e88b1b-cb24-4604-b680-5d8c7764808c",
+        "userModel": {
+            "id": 5,
+            "nome": "Clebinho",
+            "cpf": "232321",
+            "email": "sdd@gmail.com"
+        },
+        "datapedido": "2024-01-20T19:17:16.138856",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 10,
+        "uuid": "a9d0cb6b-a569-4b85-87e3-2f5a453ee89e",
+        "userModel": {
+            "id": 5,
+            "nome": "Clebinho",
+            "cpf": "232321",
+            "email": "sdd@gmail.com"
+        },
+        "datapedido": "2024-01-20T19:17:56.565097",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 11,
+        "uuid": "0bcba440-73ae-46d9-8f91-9142f87c4a11",
+        "userModel": {
+            "id": 5,
+            "nome": "Clebinho",
+            "cpf": "232321",
+            "email": "sdd@gmail.com"
+        },
+        "datapedido": "2024-01-20T19:22:06.263812",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 12,
+        "uuid": "26802a84-c963-4bb8-8aef-2ffff2d0e9b5",
+        "userModel": {
+            "id": 5,
+            "nome": "Clebinho",
+            "cpf": "232321",
+            "email": "sdd@gmail.com"
+        },
+        "datapedido": "2024-01-20T19:22:36.231194",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 13,
+        "uuid": "7c0df407-9ca1-41b2-8c54-d411cd6db4f6",
+        "userModel": {
+            "id": 6,
+            "nome": "3213",
+            "cpf": "656456",
+            "email": "sdd@gmail.com"
+        },
+        "datapedido": "2024-01-25T21:53:04.335955",
+        "total": 43.5,
+        "orderStatus": "RECEIVED",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 3,
+        "uuid": "",
+        "userModel": {
+            "id": 4,
+            "nome": "Guil 424",
+            "cpf": "737.236.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2024-01-08T17:53:23.212565",
+        "total": 43.5,
+        "orderStatus": "IN_PREPARATION",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 1,
+        "uuid": "",
+        "userModel": {
+            "id": 1,
+            "nome": "Gabriel Freitas",
+            "cpf": "777.233.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2024-01-08T17:09:25.986173",
+        "total": 14.5,
+        "orderStatus": "READY",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": null
+    },
+    {
+        "id": 2,
+        "uuid": "",
+        "userModel": {
+            "id": 3,
+            "nome": "Guil Freitas",
+            "cpf": "737.233.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2024-01-08T17:30:00.439687",
+        "total": 29.0,
+        "orderStatus": "READY",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    }
+]
+```
