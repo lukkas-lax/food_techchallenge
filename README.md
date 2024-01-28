@@ -1,18 +1,18 @@
 # Food Tech Challenge - Fase 1
 ## Sobre o projeto
-O projeto é uma API backend de fast-food, a API conta com todos os métodos necessários para fazer o gerenciamento de fastfood, a documentação conta com o DDD no Miro do projeto, instruções de uso e mapeamento de endpoints. O projeto conta com arquitetura Clean Architecture e Hexagonal, tecnologia Java, utilizando Spring, Hibernate, Maven, JDBC entre outros frameworks, MySQL para banco de dados e Kubernetes junto com Docker para conteinerização e provisionamento da aplicação.
+O projeto é uma API backend de fast-food, a API conta com todos os métodos necessários para fazer o gerenciamento de fastfood, a documentação conta com o DDD no Miro do projeto, instruções de uso e mapeamento de endpoints. O projeto conta com arquitetura Clean Architecture, tecnologia Java, utilizando Spring, Hibernate, Maven, JDBC entre outros frameworks, MySQL para banco de dados e Kubernetes junto com Docker para conteinerização e provisionamento da aplicação.
 
 ## Pré-Requisitos
-1. Java x.x.
-2. Maven x.x.
+1. Java 21
+2. Maven 4.0.0
 3. Kubectl
 4. Docker
-5. Docker Desktop ou Minikube
+5. Docker Desktop ou Minikube (interface)
 
 ## Validação dos Pré-Requisitos
 Para validar se todos os pré-requisitos estão devidamente instalados, rode os comandos abaixos:
-1. Java = java -v?
-2. Maven = maven -v?
+1. Java = "java --version"
+2. Maven = "mvn -v"
 3. Kubectl = "kubectl version --output=yaml"
 4. Docker = "docker -v"
 5. Docker Desktop ou Minikube = "kubectl get pods"
@@ -29,7 +29,6 @@ Para validar se todos os pré-requisitos estão devidamente instalados, rode os 
 - kubectl port-forward service/food-techchallenge-svc 8080:8080
 
 Após a execução dos comandos com sucesso é possível realizar todas as operações abaixo dentro do Postman em relação a pedidos, produtos e clientes.
-
 
 ## Collection do Postman
 [Collection](https://github.com/lukkas-lax/food_techchallenge/blob/master/Tech%20Challenge%20Final.postman_collection.json)
