@@ -137,8 +137,8 @@ public class PedidoAdapter implements PedidoRepository {
                             pedido.getTotal(), pedido.getOrderStatus(), produtosResult, pedido.getPaymentStatus()));
                 }
 
-                pedidosResult = Stream.concat(pedidosReceived.stream(),pedidosPreparation.stream()).collect(Collectors.toList());
-                pedidosResult = Stream.concat(pedidosResult.stream(),pedidosReady.stream()).collect(Collectors.toList());
+                pedidosResult = Stream.concat(pedidosReady.stream(),pedidosPreparation.stream()).collect(Collectors.toList());
+                pedidosResult = Stream.concat(pedidosResult.stream(),pedidosReceived.stream()).collect(Collectors.toList());
             }
             return pedidosResult;
         } catch (Exception e) {
