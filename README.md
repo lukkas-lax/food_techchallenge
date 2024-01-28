@@ -34,6 +34,9 @@ Após a execução dos comandos com sucesso é possível realizar todas as opera
 ## Collection do Postman
 [Collection](https://github.com/lukkas-lax/food_techchallenge/blob/master/Tech%20Challenge%20Final.postman_collection.json)
 
+## Swagger
+http://localhost:8080/swagger-ui/index.html
+
 ## Script do banco de dados
 [Script](https://github.com/lukkas-lax/food_techchallenge/blob/master/food_techchallenge/database_creation.sql)
 
