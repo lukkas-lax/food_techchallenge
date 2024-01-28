@@ -12,7 +12,7 @@ public interface PedidoJpaRepository extends JpaRepository<PedidoEntity, Long> {
     List<PedidoEntity> findAllByOrderStatus(String orderStatus);
 
     @Query(
-            value = "SELECT * FROM food_techchallenge.pedidos where order_status in ('RECEIVED','IN_PREPARATION','READY') order by datapedido DESC;",
+            value = "SELECT * FROM food_techchallenge.pedidos where order_status in ('RECEIVED','IN_PREPARATION','READY') order by datapedido;",
             nativeQuery = true)
     List<PedidoEntity>  findAllPedidosAtivos();
 }
