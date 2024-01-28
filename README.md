@@ -26,7 +26,6 @@ Para validar se todos os pré-requisitos estão devidamente instalados, rode os 
 2. Dentro do repósitorio food_techchallenge, importe o projeto na sua IDE de preferência.
 3. Rode os comandos abaixo:
    
-- mvn clean install
 - kubectl apply -f food_techchallenge-svc.yaml
 - kubectl apply -f food_techchallenge-hpa.yaml
 - kubectl apply -f food_techchallenge-deployment.yaml
