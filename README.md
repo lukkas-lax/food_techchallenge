@@ -1,4 +1,4 @@
-# Food Tech Challenge - Fase 1
+# Food Tech Challenge
 ## Sobre o projeto
 O projeto é uma API backend de fast-food, a API conta com todos os métodos necessários para fazer o gerenciamento de fastfood, a documentação conta com o DDD no Miro do projeto, instruções de uso e mapeamento de endpoints. O projeto conta com arquitetura Clean Architecture, tecnologia Java, utilizando Spring, Hibernate, Maven, JDBC entre outros frameworks, MySQL para banco de dados e Kubernetes junto com Docker para conteinerização e provisionamento da aplicação.
 
