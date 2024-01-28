@@ -17,7 +17,6 @@ Para validar se todos os pré-requisitos estão devidamente instalados, rode os 
 4. Docker = "docker -v"
 5. Docker Desktop ou Minikube = "kubectl get pods"
 
-
 ## Passo a passo para inicializar aplicação
 1. Clone este repositório.
 2. Dentro do repósitorio food_techchallenge, importe o projeto na sua IDE de preferência.
@@ -28,6 +27,9 @@ Para validar se todos os pré-requisitos estão devidamente instalados, rode os 
 - kubectl apply -f food_techchallenge-hpa.yaml
 - kubectl apply -f food_techchallenge-deployment.yaml
 - kubectl port-forward service/food-techchallenge-svc 8080:8080
+
+Após a execução dos comandos com sucesso é possível realizar todas as operações abaixo dentro do Postman em relação a pedidos, produtos e clientes.
+
 
 ## Collection do Postman
 [Collection](https://github.com/lukkas-lax/food_techchallenge/blob/master/Tech%20Challenge%20Final.postman_collection.json)
