@@ -431,6 +431,114 @@ Path parameter
 ```json
 [
     {
+        "id": 1,
+        "uuid": "",
+        "userModel": {
+            "id": 1,
+            "nome": "Gabriel Freitas",
+            "cpf": "777.233.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2024-01-08T17:09:25.986173",
+        "total": 14.5,
+        "orderStatus": "READY",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 2,
+        "uuid": "",
+        "userModel": {
+            "id": 3,
+            "nome": "Guil Freitas",
+            "cpf": "737.233.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2024-01-08T17:30:00.439687",
+        "total": 29.0,
+        "orderStatus": "READY",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
+        "id": 3,
+        "uuid": "",
+        "userModel": {
+            "id": 4,
+            "nome": "Guil 424",
+            "cpf": "737.236.123-19",
+            "email": "gf@gmail.com"
+        },
+        "datapedido": "2024-01-08T17:53:23.212565",
+        "total": 43.5,
+        "orderStatus": "IN_PREPARATION",
+        "produtoModels": [
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            },
+            {
+                "id": 1,
+                "nome": "X-Salada",
+                "descricao": "Hamburguer com alface e tomate",
+                "preco": 14.5,
+                "categoriaModel": {
+                    "id": 1,
+                    "descricao": ""
+                }
+            }
+        ],
+        "paymentStatus": "APROVADO"
+    },
+    {
         "id": 4,
         "uuid": "",
         "userModel": {
@@ -867,114 +975,6 @@ Path parameter
                     "descricao": ""
                 }
             },
-            {
-                "id": 1,
-                "nome": "X-Salada",
-                "descricao": "Hamburguer com alface e tomate",
-                "preco": 14.5,
-                "categoriaModel": {
-                    "id": 1,
-                    "descricao": ""
-                }
-            },
-            {
-                "id": 1,
-                "nome": "X-Salada",
-                "descricao": "Hamburguer com alface e tomate",
-                "preco": 14.5,
-                "categoriaModel": {
-                    "id": 1,
-                    "descricao": ""
-                }
-            }
-        ],
-        "paymentStatus": "APROVADO"
-    },
-    {
-        "id": 3,
-        "uuid": "",
-        "userModel": {
-            "id": 4,
-            "nome": "Guil 424",
-            "cpf": "737.236.123-19",
-            "email": "gf@gmail.com"
-        },
-        "datapedido": "2024-01-08T17:53:23.212565",
-        "total": 43.5,
-        "orderStatus": "IN_PREPARATION",
-        "produtoModels": [
-            {
-                "id": 1,
-                "nome": "X-Salada",
-                "descricao": "Hamburguer com alface e tomate",
-                "preco": 14.5,
-                "categoriaModel": {
-                    "id": 1,
-                    "descricao": ""
-                }
-            },
-            {
-                "id": 1,
-                "nome": "X-Salada",
-                "descricao": "Hamburguer com alface e tomate",
-                "preco": 14.5,
-                "categoriaModel": {
-                    "id": 1,
-                    "descricao": ""
-                }
-            },
-            {
-                "id": 1,
-                "nome": "X-Salada",
-                "descricao": "Hamburguer com alface e tomate",
-                "preco": 14.5,
-                "categoriaModel": {
-                    "id": 1,
-                    "descricao": ""
-                }
-            }
-        ],
-        "paymentStatus": "APROVADO"
-    },
-    {
-        "id": 1,
-        "uuid": "",
-        "userModel": {
-            "id": 1,
-            "nome": "Gabriel Freitas",
-            "cpf": "777.233.123-19",
-            "email": "gf@gmail.com"
-        },
-        "datapedido": "2024-01-08T17:09:25.986173",
-        "total": 14.5,
-        "orderStatus": "READY",
-        "produtoModels": [
-            {
-                "id": 1,
-                "nome": "X-Salada",
-                "descricao": "Hamburguer com alface e tomate",
-                "preco": 14.5,
-                "categoriaModel": {
-                    "id": 1,
-                    "descricao": ""
-                }
-            }
-        ],
-        "paymentStatus": null
-    },
-    {
-        "id": 2,
-        "uuid": "",
-        "userModel": {
-            "id": 3,
-            "nome": "Guil Freitas",
-            "cpf": "737.233.123-19",
-            "email": "gf@gmail.com"
-        },
-        "datapedido": "2024-01-08T17:30:00.439687",
-        "total": 29.0,
-        "orderStatus": "READY",
-        "produtoModels": [
             {
                 "id": 1,
                 "nome": "X-Salada",
