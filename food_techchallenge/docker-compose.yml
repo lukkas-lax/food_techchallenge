@@ -18,7 +18,7 @@ services:
   spring-app:
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     restart: on-failure
     ports:
       - 8080:8080
