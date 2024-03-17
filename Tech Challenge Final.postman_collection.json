@@ -1,11 +1,43 @@
 {
 	"info": {
-		"_postman_id": "9c71a748-3bc5-45f1-b980-8e623e3503f1",
+		"_postman_id": "9d06c1f2-2739-432c-b2ed-8e67fcd25122",
 		"name": "Tech Challenge Final",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "29847628"
 	},
 	"item": [
+		{
+			"name": "API Gateway - Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"body\": {\r\n    \"username\": \"12345678910\",\r\n    \"password\": \"Techfiap0$\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://75p1m1w3li.execute-api.us-east-2.amazonaws.com/HK/lambda_Auth",
+					"protocol": "https",
+					"host": [
+						"75p1m1w3li",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"HK",
+						"lambda_Auth"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "Salva Produto",
 			"request": {
