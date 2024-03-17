@@ -37,5 +37,6 @@ public class BeanConfig {
     public PedidoUseCasePort pedidoUseCasePort(PedidoRepository pedidoRepository, UserRepository userRepository, ProdutoRepository produtoRepository){
         return new PedidoUseCase(pedidoRepository, userRepository, produtoRepository);
     }
+    //TODO
 
 }
